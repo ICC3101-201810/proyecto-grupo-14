@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    class Local
+    public class Local
     {
         List<Producto> productos = new List<Producto>();
         public string nombre;
-        string direccion;
-        bool despacho;
-        bool efectivo;
-        bool credito;
-        bool cheque;
+        public string direccion;
+        public bool despacho;
+        public bool efectivo;
+        public bool debito;
+        public bool credito;
+        public bool cheque;
         public string rutAdmin;
 
-        public Local(string Nombre, string Direccion,string RutAdmin, bool Despacho, bool Efectivo, bool Credito, bool Cheque)
+        public Local(string Nombre, string Direccion,string RutAdmin, bool Despacho, bool Efectivo,bool Debito, bool Credito, bool Cheque)
         {
             nombre = Nombre;
             direccion = Direccion;
             rutAdmin = RutAdmin;
             despacho = Despacho;
             efectivo = Efectivo;
+            debito = Debito;
             credito = Credito;
             cheque = Cheque;
         }
@@ -53,7 +55,7 @@ namespace ConsoleApp4
         }
         public void verInfo()
         {
-            Console.WriteLine("Nombre: " + nombre + ", direccion: " + direccion + ", rut admin: " + rutAdmin + ", despacho: " + despacho + ", efectivo: " + efectivo + ", credito: " + credito + ", cheque: " + cheque);
+            Console.WriteLine("Nombre: " + nombre + ", direccion: " + direccion + ", rut admin: " + rutAdmin + ", despacho: " + despacho + ", efectivo: " + efectivo + ", debito: "+ debito+ ", credito: " + credito + ", cheque: " + cheque);
         }
 
         public bool perteneceUniversidad(string direccion)

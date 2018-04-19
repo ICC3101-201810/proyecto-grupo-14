@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    class Padre:Usuario
+    public class Padre:Usuario
     {
         List<Local> locales = new List<Local>();
         public string nombre;

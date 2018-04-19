@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    class Administrador:Usuario
+    public class Administrador:Usuario
     {
         public string nombre;
         public Administrador(string Rut, string Nombre, string Contraseña):base(Rut, Contraseña)

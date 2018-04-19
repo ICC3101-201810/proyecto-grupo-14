@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    class Producto
+    public class Producto
     {
-        string nombre;
-        string marca;
-        int precio;
-        int stock;
+        public string nombre;
+        public string marca;
+        public int precio;
+        public int stock;
 
         public Producto(string Nombre, string Marca, int Precio, int Stock)
         {
