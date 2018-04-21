@@ -19,7 +19,7 @@ namespace ConsoleApp4
         }
         public bool verificarCVC(string cvc)
         {
-            if (cvc.Length>3)
+            if (cvc.Length > 3 || cvc.Length < 3)
             {
                 return false;
             }
@@ -27,7 +27,7 @@ namespace ConsoleApp4
         }
         public bool verificarNumeroTarjera(string numeroTarjeta)
         {
-            if (numeroTarjeta.Length > 16)
+            if (numeroTarjeta.Length > 16 || numeroTarjeta.Length < 16)
             {
                 return false;
             }
@@ -35,8 +35,10 @@ namespace ConsoleApp4
         }
         public bool verificarVechaVencimiento(string fechaVencimiento)
         {
-            DateTime fechaVencimiento1 = Convert.ToDateTime(fechaVencimiento);
-            if (DateTime.Now < fechaVencimiento1)
+            string fechaVencimiento1 = "01/"+fechaVencimiento;
+            DateTime fechaVencimiento2 = DateTime.Parse(fechaVencimiento1);
+            int result = DateTime.Compare(fechaVencimiento2, DateTime.Now);
+            if ( result < 0)
             {
                 return false;
             }
