@@ -8,6 +8,7 @@ namespace ConsoleApp4
 {
     public class OrdenCompra
     {
+        [Serializable()]
         Cliente cliente;
         List<Producto> productos = new List<Producto>();
         Local local;

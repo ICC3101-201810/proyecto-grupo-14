@@ -8,6 +8,7 @@ namespace ConsoleApp4
 {
     class Webpay
     {
+        [Serializable()]
         public string rut;
         public string banco;
         public string clave;

@@ -8,6 +8,7 @@ namespace ConsoleApp4
 {
     public class Cliente:Usuario
     {
+        [Serializable()]
         public int dinero;
         public string nombre;
         public Cliente(string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Contraseña)

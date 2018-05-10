@@ -143,11 +143,13 @@ namespace ConsoleApp4
                             Console.ForegroundColor = ConsoleColor.Black;
                             Console.WriteLine("Ingrese rut valido (sin punto y con guión): ");
                             string rut = Console.ReadLine();
+                            
                             Console.WriteLine("Ingrese nombre: ");
                             string nombre = Console.ReadLine();
                             Console.WriteLine("Ingrese contraseña: ");
                             string contraseña = Console.ReadLine();
                             Padre padre = new Padre(rut, nombre, contraseña);
+                            
                             if (padre.verificarRut(rut) == false)
                             {
                                 Console.Beep();
@@ -176,6 +178,7 @@ namespace ConsoleApp4
                             Console.WriteLine("Ingrese contraseña: ");
                             string contraseña = Console.ReadLine();
                             Administrador administrador = new Administrador(rut, nombre, contraseña);
+                            administrador.VerificadorRut()
                             if (administrador.verificarRut(rut) == false)
                             {
                                 Console.Beep();

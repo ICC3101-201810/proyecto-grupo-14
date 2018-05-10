@@ -8,6 +8,7 @@ namespace ConsoleApp4
 {
     public class Producto
     {
+        [Serializable()]
         public string nombre;
         public string marca;
         public int precio;

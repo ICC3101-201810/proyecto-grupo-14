@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
+    [Serializable()]
     public class Administrador:Usuario
     {
         public string nombre;
@@ -20,6 +21,31 @@ namespace ConsoleApp4
                 return true;
             }
             return false;
+        }
+
+        public bool VerificadorRut(List<Cliente> cl, List<Administrador> admin, List<Padre> padre, string rut)
+        {
+            foreach (Cliente p in cl) {
+                if (p.rut == rut)
+                {
+                    return true;
+                }
+            }
+            foreach (Administrador p in admin) {
+                if (p.rut == rut)
+                {
+                    return true;
+                }
+            }
+            foreach (Padre p in padre)
+            {
+                if (p.rut == rut)
+                {
+                    return true;
+                }
+            }
+            return false;
+            
         }
     }
 }
