@@ -16,7 +16,7 @@ namespace Proyecto
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.Text = "Registo Nuevo Usuario";
+            this.Text = "Registro Nuevo Usuario";
         }
 
         private void Volver_Click(object sender, EventArgs e)
