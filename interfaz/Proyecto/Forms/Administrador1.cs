@@ -25,5 +25,17 @@ namespace Proyecto
             Form1 menu = new Form1();
             menu.Show();
         }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Contraseña contraseña = new Contraseña();
+            contraseña.Show();
+        }
+
+        private void agregarStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarProducto ag = new AgregarProducto();
+            ag.Show();
+        }
     }
 }

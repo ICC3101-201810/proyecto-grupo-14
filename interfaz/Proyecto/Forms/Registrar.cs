@@ -69,13 +69,13 @@ namespace Proyecto
             Usuario u = new Usuario(a, a1);
             if (u.verificarRut(a) == false)
             {
-                MessageBox.Show("Rut invalido");
+                MessageBox.Show("Rut invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox1.Text = "";
             }
 
             if (u.VerificadorUsuario(Listas.clientes, Listas.administradores, Listas.padres, a, a1) == true)
             {
-                MessageBox.Show("Usuario ya existente");
+                MessageBox.Show("Usuario ya existente","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox1.Text = "";
                 textBox3.Text = "";
             }
@@ -92,7 +92,11 @@ namespace Proyecto
 
             else if (checkBox3.Checked== true && textBox4.Text=="")
             {
+<<<<<<< HEAD
                 MessageBox.Show("Complete todos los campos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+=======
+                MessageBox.Show("Complete todos los campos","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+>>>>>>> 1f1396be5c4a8c3b2564256b3ee45314413b89c6
             }
             
             else
@@ -106,7 +110,7 @@ namespace Proyecto
                     Listas.padres.Add(padre);
 
 
-                    MessageBox.Show("Padre creado satisfactoriamente");
+                    MessageBox.Show("Padre creado satisfactoriamente","Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     Form1 menu = new Form1();
                     menu.Show();
@@ -121,7 +125,7 @@ namespace Proyecto
                     Listas.administradores.Add(administrador);
 
 
-                    MessageBox.Show("Admnistrador creado satisfactoriamente");
+                    MessageBox.Show("Admnistrador creado satisfactoriamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     Form1 menu = new Form1();
                     menu.Show();
@@ -138,7 +142,7 @@ namespace Proyecto
                     Listas.clientes.Add(cliente);
 
 
-                    MessageBox.Show("Cliente creado satisfactoriamente");
+                    MessageBox.Show("Cliente creado satisfactoriamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     Form1 menu = new Form1();
                     menu.Show();

@@ -65,13 +65,13 @@
             // localesUniversidadToolStripMenuItem
             // 
             this.localesUniversidadToolStripMenuItem.Name = "localesUniversidadToolStripMenuItem";
-            this.localesUniversidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.localesUniversidadToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.localesUniversidadToolStripMenuItem.Text = "Locales Universidad";
             // 
             // localesToolStripMenuItem
             // 
             this.localesToolStripMenuItem.Name = "localesToolStripMenuItem";
-            this.localesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.localesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.localesToolStripMenuItem.Text = "Locales";
             // 
             // efectivoToolStripMenuItem
@@ -86,13 +86,13 @@
             // verSaldoToolStripMenuItem
             // 
             this.verSaldoToolStripMenuItem.Name = "verSaldoToolStripMenuItem";
-            this.verSaldoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verSaldoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.verSaldoToolStripMenuItem.Text = "Ver Saldo";
             // 
             // agregarDineroToolStripMenuItem
             // 
             this.agregarDineroToolStripMenuItem.Name = "agregarDineroToolStripMenuItem";
-            this.agregarDineroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarDineroToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.agregarDineroToolStripMenuItem.Text = "Agregar Dinero";
             // 
             // cuentaToolStripMenuItem
@@ -108,6 +108,7 @@
             this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
             this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // cerrar
             // 

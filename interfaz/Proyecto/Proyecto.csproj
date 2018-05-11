@@ -45,20 +45,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarLocal.cs">
+    <Compile Include="Forms\AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarLocal.Designer.cs">
+    <Compile Include="Forms\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contraseña.Designer.cs">
+      <DependentUpon>Contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AgregarLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AgregarLocal.Designer.cs">
       <DependentUpon>AgregarLocal.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Administrador.cs" />
     <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Cliente1.cs">
+    <Compile Include="Forms\Cliente1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente1.Designer.cs">
+    <Compile Include="Forms\Cliente1.Designer.cs">
       <DependentUpon>Cliente1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="EditarLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,9 +79,12 @@
       <DependentUpon>EditarLocal.cs</DependentUpon>
     </Compile>
     <Compile Include="EliminarLocal.cs">
+=======
+    <Compile Include="Forms\EliminarLocal.cs">
+>>>>>>> 1f1396be5c4a8c3b2564256b3ee45314413b89c6
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarLocal.Designer.cs">
+    <Compile Include="Forms\EliminarLocal.Designer.cs">
       <DependentUpon>EliminarLocal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Administrador1.cs">
@@ -103,16 +119,26 @@
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
-    <EmbeddedResource Include="AgregarLocal.resx">
+    <EmbeddedResource Include="Forms\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Contraseña.resx">
+      <DependentUpon>Contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AgregarLocal.resx">
       <DependentUpon>AgregarLocal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cliente1.resx">
+    <EmbeddedResource Include="Forms\Cliente1.resx">
       <DependentUpon>Cliente1.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="EditarLocal.resx">
       <DependentUpon>EditarLocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarLocal.resx">
+=======
+    <EmbeddedResource Include="Forms\EliminarLocal.resx">
+>>>>>>> 1f1396be5c4a8c3b2564256b3ee45314413b89c6
       <DependentUpon>EliminarLocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administrador1.resx">

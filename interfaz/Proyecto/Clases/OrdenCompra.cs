@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto
 {
+    [Serializable()]
     public class OrdenCompra
     {
         Cliente cliente;
