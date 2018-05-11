@@ -38,5 +38,11 @@ namespace Proyecto
             EliminarLocal el = new EliminarLocal();
             el.Show();
         }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Contraseña contraseña = new Contraseña();
+            contraseña.Show();
+        }
     }
 }

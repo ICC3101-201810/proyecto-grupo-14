@@ -63,7 +63,7 @@ namespace Proyecto
             }
             if(o==0)
             {
-                MessageBox.Show("Usuario no encontrado");
+                MessageBox.Show("Usuario no encontrado","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

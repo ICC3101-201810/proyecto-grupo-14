@@ -66,5 +66,40 @@ namespace Proyecto
             }
             return false;
         }
+        public bool CambiarContraseña(List<Cliente> cl, List<Administrador> admin, List<Padre> padre, string rut, string contraseña_a, string contraseña_n)
+        {
+            foreach (Cliente p in cl)
+            {
+                if (p.rut == rut && p.contraseña == contraseña_a)
+                {
+                    Cliente c1 = new Cliente(rut, p.nombre, contraseña_n, p.dinero);
+                    cl.Add(c1);
+                    cl.Remove(p);
+                    return true;
+                }
+            }
+            foreach (Administrador p in admin)
+            {
+                if (p.rut == rut && p.contraseña == contraseña_a)
+                {
+                    Administrador a1 = new Administrador(rut, p.nombre, contraseña_n);
+                    admin.Add(a1);
+                    admin.Remove(p);
+                    return true;
+                }
+            }
+            foreach (Padre p in padre)
+            {
+                if (p.rut == rut && p.contraseña == contraseña_a)
+                {
+                    Padre p1 = new Padre(rut, p.nombre, contraseña_n);
+                    padre.Add(p1);
+                    padre.Remove(p);
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
