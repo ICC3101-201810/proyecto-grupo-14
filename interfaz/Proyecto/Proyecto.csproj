@@ -59,6 +59,12 @@
     <Compile Include="Cliente1.Designer.cs">
       <DependentUpon>Cliente1.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarLocal.Designer.cs">
+      <DependentUpon>EditarLocal.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente1.resx">
       <DependentUpon>Cliente1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarLocal.resx">
+      <DependentUpon>EditarLocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarLocal.resx">
       <DependentUpon>EliminarLocal.cs</DependentUpon>

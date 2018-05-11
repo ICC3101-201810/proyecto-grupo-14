@@ -74,6 +74,7 @@
             this.editarLocalToolStripMenuItem.Name = "editarLocalToolStripMenuItem";
             this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarLocalToolStripMenuItem.Text = "Editar Local";
+            this.editarLocalToolStripMenuItem.Click += new System.EventHandler(this.editarLocalToolStripMenuItem_Click);
             // 
             // eliminarLocalToolStripMenuItem
             // 

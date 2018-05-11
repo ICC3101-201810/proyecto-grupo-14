@@ -82,17 +82,17 @@ namespace Proyecto
 
             else if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
             {
-                MessageBox.Show("Complete todos los campos");
+                MessageBox.Show("Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             else if (checkBox1.Checked == false && checkBox2.Checked == false && checkBox3.Checked ==false)
             {
-                MessageBox.Show("Seleccione una opcion de usuario para poder continuar");
+                MessageBox.Show("Seleccione una opcion de usuario para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             else if (checkBox3.Checked== true && textBox4.Text=="")
             {
-                MessageBox.Show("Complete todos los campos");
+                MessageBox.Show("Complete todos los campos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
             else
