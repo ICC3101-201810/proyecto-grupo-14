@@ -14,5 +14,6 @@ namespace Proyecto
         public static List<Administrador> administradores = new List<Administrador>();
         public static List<Local> locales = new List<Local>();
         public static List<Local> localesU = new List<Local>();
+        public static List<OrdenCompra> OrdenesCompras = new List<OrdenCompra>();
     }
 }
