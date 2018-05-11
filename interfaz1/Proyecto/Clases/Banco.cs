@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto
 {
+    [Serializable()]
     class Banco : Cliente
     {
         public string NroCuenta { get; set; }
