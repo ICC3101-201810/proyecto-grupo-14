@@ -63,8 +63,9 @@
             // agregarStockToolStripMenuItem
             // 
             this.agregarStockToolStripMenuItem.Name = "agregarStockToolStripMenuItem";
-            this.agregarStockToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.agregarStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarStockToolStripMenuItem.Text = "Agregar Stock";
+            this.agregarStockToolStripMenuItem.Click += new System.EventHandler(this.agregarStockToolStripMenuItem_Click);
             // 
             // localToolStripMenuItem
             // 

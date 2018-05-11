@@ -46,7 +46,6 @@ namespace Proyecto
                     this.Hide();
                     Administrador1 administrador = new Administrador1();
                     administrador.Show();
-
                 }
             }
 
