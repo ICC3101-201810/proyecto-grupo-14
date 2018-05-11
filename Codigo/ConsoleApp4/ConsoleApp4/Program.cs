@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ConsoleApp4
 {
@@ -13,12 +14,117 @@ namespace ConsoleApp4
         {
             try
             {
-                StreamWriter sw = new StreamWriter("C:\\Test.txt");
                 List<Padre> padres = new List<Padre>();
+                try
+                {
+                    using (Stream stream = File.Open("padres.bin", FileMode.Open))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+
+                        padres = (List<Padre>)bin.Deserialize(stream);
+                        foreach (Padre p in padres)
+                        {
+                            Console.WriteLine("{0}, {1}, {2}",
+                                p.contraseña,
+                                p.nombre,
+                                p.rut);
+                        }
+                    }
+                }
+                catch (IOException)
+                {
+                }
                 List<Cliente> clientes = new List<Cliente>();
+                try
+                {
+                    using (Stream stream = File.Open("clientes.bin", FileMode.Open))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+
+                        clientes = (List<Cliente>)bin.Deserialize(stream);
+                        foreach (Cliente p in clientes)
+                        {
+                            Console.WriteLine("{0}, {1}, {2}, {3}",
+                                p.contraseña,
+                                p.dinero,
+                                p.nombre,
+                                p.rut);
+                        }
+                    }
+                }
+                catch (IOException)
+                {
+                }
                 List<Administrador> administradores = new List<Administrador>();
+                try
+                {
+                    using (Stream stream = File.Open("administradores.bin", FileMode.Open))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+
+                        administradores = (List<Administrador>)bin.Deserialize(stream);
+                        foreach (Administrador p in administradores)
+                        {
+                            Console.WriteLine("{0}, {1}, {2}",
+                                p.contraseña,
+                                p.nombre,
+                                p.rut);
+                        }
+                    }
+                }
+                catch (IOException)
+                {
+                }
                 List<Local> locales = new List<Local>();
+                try
+                {
+                    using (Stream stream = File.Open("locales.bin", FileMode.Open))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+
+                        locales = (List<Local>)bin.Deserialize(stream);
+                        foreach (Local p in locales)
+                        {
+                            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
+                                p.nombre,
+                                p.rutAdmin,
+                                p.cheque,
+                                p.credito,
+                                p.debito,
+                                p.despacho,
+                                p.direccion,
+                                p.efectivo);
+                        }
+                    }
+                }
+                catch (IOException)
+                {
+                }
                 List<Local> localesU = new List<Local>();
+                try
+                {
+                    using (Stream stream = File.Open("localesU.bin", FileMode.Open))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+
+                        localesU = (List<Local>)bin.Deserialize(stream);
+                        foreach (Local p in localesU)
+                        {
+                            Console.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
+                                p.nombre,
+                                p.rutAdmin,
+                                p.cheque,
+                                p.credito,
+                                p.debito,
+                                p.despacho,
+                                p.direccion,
+                                p.efectivo);
+                        }
+                    }
+                }
+                catch (IOException)
+                {
+                }
                 Console.BackgroundColor = ConsoleColor.White;
                 while (true)
                 {
@@ -37,11 +143,13 @@ namespace ConsoleApp4
                             Console.ForegroundColor = ConsoleColor.Black;
                             Console.WriteLine("Ingrese rut valido (sin punto y con guión): ");
                             string rut = Console.ReadLine();
+                            
                             Console.WriteLine("Ingrese nombre: ");
                             string nombre = Console.ReadLine();
                             Console.WriteLine("Ingrese contraseña: ");
                             string contraseña = Console.ReadLine();
                             Padre padre = new Padre(rut, nombre, contraseña);
+                            
                             if (padre.verificarRut(rut) == false)
                             {
                                 Console.Beep();
@@ -70,6 +178,7 @@ namespace ConsoleApp4
                             Console.WriteLine("Ingrese contraseña: ");
                             string contraseña = Console.ReadLine();
                             Administrador administrador = new Administrador(rut, nombre, contraseña);
+                            administrador.VerificadorRut()
                             if (administrador.verificarRut(rut) == false)
                             {
                                 Console.Beep();
@@ -942,6 +1051,31 @@ namespace ConsoleApp4
                     }
                     if (respuesta == "3")
                     {
+                        using (Stream stream = File.Open("padres.bin", FileMode.Create))
+                        {
+                            BinaryFormatter bin = new BinaryFormatter();
+                            bin.Serialize(stream, padres);
+                        }
+                        using (Stream stream = File.Open("clientes.bin", FileMode.Create))
+                        {
+                            BinaryFormatter bin = new BinaryFormatter();
+                            bin.Serialize(stream, clientes);
+                        }
+                        using (Stream stream = File.Open("administradores.bin", FileMode.Create))
+                        {
+                            BinaryFormatter bin = new BinaryFormatter();
+                            bin.Serialize(stream, administradores);
+                        }
+                        using (Stream stream = File.Open("locales.bin", FileMode.Create))
+                        {
+                            BinaryFormatter bin = new BinaryFormatter();
+                            bin.Serialize(stream, locales);
+                        }
+                        using (Stream stream = File.Open("localesU.bin", FileMode.Create))
+                        {
+                            BinaryFormatter bin = new BinaryFormatter();
+                            bin.Serialize(stream, localesU);
+                        }
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("Programa finalizado");
                         break;

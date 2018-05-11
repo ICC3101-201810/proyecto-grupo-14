@@ -8,6 +8,7 @@ namespace ConsoleApp4
 {
     class Credito:Webpay
     {
+        [Serializable()]
         public string numeroTarjeta;
         private string cvc;
         public string fechaVencimiento;

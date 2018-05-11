@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
+    [Serializable()]
     public class Local
     {
         List<Producto> productos = new List<Producto>();

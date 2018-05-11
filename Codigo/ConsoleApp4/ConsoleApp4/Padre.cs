@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    public class Padre:Usuario
+    [Serializable()]
+    public class Padre : Administrador
     {
+        
         List<Local> locales = new List<Local>();
-        public string nombre;
-        public Padre(string Rut, string Nombre, string Contraseña):base(Rut, Contraseña)
+        public Padre():base(Rut, Nombre, Contraseña)
         {
-            nombre = Nombre;
         }
         public bool agregarLocal(Local local)
         {

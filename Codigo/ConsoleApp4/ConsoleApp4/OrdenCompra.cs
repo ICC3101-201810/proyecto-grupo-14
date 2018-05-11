@@ -8,6 +8,7 @@ namespace ConsoleApp4
 {
     public class OrdenCompra
     {
+        [Serializable()]
         Cliente cliente;
         List<Producto> productos = new List<Producto>();
         Local local;
@@ -31,7 +32,7 @@ namespace ConsoleApp4
             }
             return true;
         }
-        public void verInfo()
+        public bool verificarCompra(Cliente cliente, List<Producto> productos)
         {
             int suma=0;
             Console.WriteLine("El cliente: "+cliente.nombre+" compro: ");
