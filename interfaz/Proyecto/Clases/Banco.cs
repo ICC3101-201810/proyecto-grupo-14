@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto.Clases
+namespace Proyecto
 {
     [Serializable()]
-    class Banco:Cliente
+    public class Banco:Cliente
     {
         public string NroCuenta { get; set; }
         public string NroTarjetaDebito { get; set; }
@@ -19,9 +19,9 @@ namespace Proyecto.Clases
         public Banco (string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Nombre, Contraseña, Dinero)
         {
         }
-        public string PagoDebito(string Rut, string Account)
+        public bool PagoDebito()
         {
-            return "";
+            return false;
         }
     }
 }

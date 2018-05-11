@@ -19,6 +19,17 @@ namespace Proyecto
             InitializeComponent();
             try
             {
+                using (Stream stream = File.Open("Bancos.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    Listas.Cuentas = (List<Banco>)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
                 using (Stream stream = File.Open("Ordenes.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
@@ -98,6 +109,11 @@ namespace Proyecto
             {
                 BinaryFormatter bin = new BinaryFormatter();
                 bin.Serialize(stream, Listas.OrdenesCompras);
+            }
+            using (Stream stream = File.Open("Bancos.bin", FileMode.Create))
+            {
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(stream, Listas.Cuentas);
             }
             using (Stream stream = File.Open("clientes.bin", FileMode.Create))
             {
