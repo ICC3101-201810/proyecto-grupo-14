@@ -45,7 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Clases\Banco.cs" />
+=======
+    <Compile Include="Forms\AgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+>>>>>>> 9e5b81aaf8aaebeb7bc9e134e0f9cde5ef964207
     <Compile Include="Forms\Contraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,7 +75,17 @@
     <Compile Include="Forms\Cliente1.Designer.cs">
       <DependentUpon>Cliente1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="EditarLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarLocal.Designer.cs">
+      <DependentUpon>EditarLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarLocal.cs">
+=======
     <Compile Include="Forms\EliminarLocal.cs">
+>>>>>>> 1f1396be5c4a8c3b2564256b3ee45314413b89c6
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EliminarLocal.Designer.cs">
@@ -110,6 +129,9 @@
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
+    <EmbeddedResource Include="Forms\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Contraseña.resx">
       <DependentUpon>Contraseña.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,7 +141,14 @@
     <EmbeddedResource Include="Forms\Cliente1.resx">
       <DependentUpon>Cliente1.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="EditarLocal.resx">
+      <DependentUpon>EditarLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarLocal.resx">
+=======
     <EmbeddedResource Include="Forms\EliminarLocal.resx">
+>>>>>>> 1f1396be5c4a8c3b2564256b3ee45314413b89c6
       <DependentUpon>EliminarLocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administrador1.resx">

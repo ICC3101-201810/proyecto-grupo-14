@@ -92,7 +92,11 @@ namespace Proyecto
 
             else if (checkBox3.Checked== true && textBox4.Text=="")
             {
+<<<<<<< HEAD
+                MessageBox.Show("Complete todos los campos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+=======
                 MessageBox.Show("Complete todos los campos","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+>>>>>>> 1f1396be5c4a8c3b2564256b3ee45314413b89c6
             }
             
             else

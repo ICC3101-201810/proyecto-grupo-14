@@ -31,5 +31,11 @@ namespace Proyecto
             Contraseña contraseña = new Contraseña();
             contraseña.Show();
         }
+
+        private void agregarStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarProducto ag = new AgregarProducto();
+            ag.Show();
+        }
     }
 }
