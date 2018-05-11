@@ -16,10 +16,10 @@ namespace Proyecto.Clases
         public float Debito { get; set; }
         public float LineaCredito { get; set; }
         public float Credito { get; set; }
-        public Banco(string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Nombre, Contraseña, Dinero)
+        public Banco (string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Nombre, Contraseña, Dinero)
         {
         }
-        public string PagoDebito()
+        public string PagoDebito(string Rut, string Account)
         {
             return "";
         }

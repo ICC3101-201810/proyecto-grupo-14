@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
+    [Serializable()]
     class Webpay
     {
-        [Serializable()]
         public string rut;
         public string banco;
         public string clave;
