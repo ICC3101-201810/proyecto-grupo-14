@@ -107,6 +107,38 @@ namespace Proyecto
         }
 
 
+
+        public bool Eliminar(Local loc, string a)
+        {
+            
+            foreach (Local lc in Listas.locales)
+            {
+                
+                if (lc.nombre == a)
+                {
+                    Listas.locales.Remove(lc);
+                    return true;
+                    
+                }
+            }
+
+            foreach (Local lcU in Listas.localesU)
+            {
+                
+                
+                if (lcU.nombre == a)
+                {
+                    Listas.localesU.Remove(lcU);
+                    return true;
+                    
+
+                }
+            }
+            
+            return false;
+
+            
+        }
         public void verProductos()
         {
             foreach (Producto producto in productos)
@@ -114,5 +146,7 @@ namespace Proyecto
                 producto.verInfoProducto();
             }
         }
+
+        
     }
 }

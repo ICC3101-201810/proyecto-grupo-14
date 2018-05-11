@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarLocal.Designer.cs">
+      <DependentUpon>AgregarLocal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Administrador.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Cliente1.cs">
@@ -52,6 +58,12 @@
     </Compile>
     <Compile Include="Cliente1.Designer.cs">
       <DependentUpon>Cliente1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarLocal.Designer.cs">
+      <DependentUpon>EliminarLocal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Administrador1.cs">
       <SubType>Form</SubType>
@@ -85,8 +97,14 @@
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
+    <EmbeddedResource Include="AgregarLocal.resx">
+      <DependentUpon>AgregarLocal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente1.resx">
       <DependentUpon>Cliente1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarLocal.resx">
+      <DependentUpon>EliminarLocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administrador1.resx">
       <DependentUpon>Administrador1.cs</DependentUpon>

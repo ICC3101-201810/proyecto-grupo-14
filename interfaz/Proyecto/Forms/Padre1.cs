@@ -25,5 +25,18 @@ namespace Proyecto
             Form1 menu = new Form1();
             menu.Show();
         }
+
+        private void agregarLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            AgregarLocal ag = new AgregarLocal();
+            ag.Show();
+        }
+
+        private void eliminarLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminarLocal el = new EliminarLocal();
+            el.Show();
+        }
     }
 }

@@ -65,25 +65,27 @@
             // agregarLocalToolStripMenuItem
             // 
             this.agregarLocalToolStripMenuItem.Name = "agregarLocalToolStripMenuItem";
-            this.agregarLocalToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.agregarLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarLocalToolStripMenuItem.Text = "Agregar Local";
+            this.agregarLocalToolStripMenuItem.Click += new System.EventHandler(this.agregarLocalToolStripMenuItem_Click);
             // 
             // editarLocalToolStripMenuItem
             // 
             this.editarLocalToolStripMenuItem.Name = "editarLocalToolStripMenuItem";
-            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarLocalToolStripMenuItem.Text = "Editar Local";
             // 
             // eliminarLocalToolStripMenuItem
             // 
             this.eliminarLocalToolStripMenuItem.Name = "eliminarLocalToolStripMenuItem";
-            this.eliminarLocalToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.eliminarLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarLocalToolStripMenuItem.Text = "Eliminar Local";
+            this.eliminarLocalToolStripMenuItem.Click += new System.EventHandler(this.eliminarLocalToolStripMenuItem_Click);
             // 
             // verLocalesToolStripMenuItem
             // 
             this.verLocalesToolStripMenuItem.Name = "verLocalesToolStripMenuItem";
-            this.verLocalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.verLocalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verLocalesToolStripMenuItem.Text = "Ver Locales";
             // 
             // cuentaToolStripMenuItem
