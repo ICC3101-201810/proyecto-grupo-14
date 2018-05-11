@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto
 {
+    [Serializable()]
     public static class Listas
     {
         public static List<Padre> padres = new List<Padre>();

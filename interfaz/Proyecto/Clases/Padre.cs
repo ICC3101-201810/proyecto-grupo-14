@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto
 {
+    [Serializable()]
     public class Padre : Usuario
     {
         List<Local> locales = new List<Local>();

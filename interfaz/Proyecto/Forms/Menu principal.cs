@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,31 @@ namespace Proyecto
 
         private void Salir_Click(object sender, EventArgs e)
         {
+            using (Stream stream = File.Open("padres.bin", FileMode.Create))
+            {
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(stream, Listas.padres);
+            }
+            using (Stream stream = File.Open("clientes.bin", FileMode.Create))
+            {
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(stream, Listas.clientes);
+            }
+            using (Stream stream = File.Open("administradores.bin", FileMode.Create))
+            {
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(stream, Listas.administradores);
+            }
+            using (Stream stream = File.Open("locales.bin", FileMode.Create))
+            {
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(stream, Listas.locales);
+            }
+            using (Stream stream = File.Open("localesU.bin", FileMode.Create))
+            {
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(stream, Listas.localesU);
+            }
             Application.Exit();
         }
 
