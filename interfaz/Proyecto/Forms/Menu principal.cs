@@ -17,6 +17,72 @@ namespace Proyecto
         public Form1()
         {
             InitializeComponent();
+            try
+            {
+                using (Stream stream = File.Open("Ordenes.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    Listas.OrdenesCompras = (List<OrdenCompra>)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open("padres.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    Listas.padres = (List<Padre>)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open("clientes.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    Listas.clientes = (List<Cliente>)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open("administradores.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    Listas.administradores = (List<Administrador>)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open("locales.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    Listas.locales = (List<Local>)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open("localesU.bin", FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    Listas.localesU = (List<Local>)bin.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+            }
             this.CenterToScreen();
             this.Text = "Menu Principal";
         }
@@ -27,6 +93,11 @@ namespace Proyecto
             {
                 BinaryFormatter bin = new BinaryFormatter();
                 bin.Serialize(stream, Listas.padres);
+            }
+            using (Stream stream = File.Open("Ordenes.bin", FileMode.Create))
+            {
+                BinaryFormatter bin = new BinaryFormatter();
+                bin.Serialize(stream, Listas.OrdenesCompras);
             }
             using (Stream stream = File.Open("clientes.bin", FileMode.Create))
             {
