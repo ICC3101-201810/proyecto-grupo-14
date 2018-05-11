@@ -25,5 +25,11 @@ namespace Proyecto
             Form1 menu = new Form1();
             menu.Show();
         }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Contraseña contraseña = new Contraseña();
+            contraseña.Show();
+        }
     }
 }

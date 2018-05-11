@@ -37,6 +37,15 @@
             this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Cerrar = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Direccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Despacho = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Credito = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Debito = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Efectivo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cheque = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Rut_Admin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +56,7 @@
             this.cuentaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(422, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(572, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,6 +96,7 @@
             this.verLocalesToolStripMenuItem.Name = "verLocalesToolStripMenuItem";
             this.verLocalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verLocalesToolStripMenuItem.Text = "Ver Locales";
+            this.verLocalesToolStripMenuItem.Click += new System.EventHandler(this.verLocalesToolStripMenuItem_Click);
             // 
             // cuentaToolStripMenuItem
             // 
@@ -101,10 +111,11 @@
             this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
             this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // Cerrar
             // 
-            this.Cerrar.Location = new System.Drawing.Point(318, 0);
+            this.Cerrar.Location = new System.Drawing.Point(468, 1);
             this.Cerrar.Name = "Cerrar";
             this.Cerrar.Size = new System.Drawing.Size(104, 23);
             this.Cerrar.TabIndex = 1;
@@ -112,11 +123,69 @@
             this.Cerrar.UseVisualStyleBackColor = true;
             this.Cerrar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Nombre,
+            this.Direccion,
+            this.Despacho,
+            this.Credito,
+            this.Debito,
+            this.Efectivo,
+            this.Cheque,
+            this.Rut_Admin});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Location = new System.Drawing.Point(0, 24);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(572, 166);
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Visible = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // Nombre
+            // 
+            this.Nombre.Text = "Nombre";
+            this.Nombre.Width = 102;
+            // 
+            // Direccion
+            // 
+            this.Direccion.Text = "Direccion";
+            this.Direccion.Width = 87;
+            // 
+            // Despacho
+            // 
+            this.Despacho.Text = "Despacho";
+            // 
+            // Credito
+            // 
+            this.Credito.Text = "Credito";
+            // 
+            // Debito
+            // 
+            this.Debito.Text = "Debito";
+            // 
+            // Efectivo
+            // 
+            this.Efectivo.Text = "Efectivo";
+            // 
+            // Cheque
+            // 
+            this.Cheque.Text = "Cheque";
+            this.Cheque.Width = 59;
+            // 
+            // Rut_Admin
+            // 
+            this.Rut_Admin.Text = "Rut_Admin";
+            this.Rut_Admin.Width = 81;
+            // 
             // Padre1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 190);
+            this.ClientSize = new System.Drawing.Size(572, 190);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.Cerrar);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -140,5 +209,14 @@
         private System.Windows.Forms.Button Cerrar;
         private System.Windows.Forms.ToolStripMenuItem cuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Direccion;
+        private System.Windows.Forms.ColumnHeader Despacho;
+        private System.Windows.Forms.ColumnHeader Credito;
+        private System.Windows.Forms.ColumnHeader Debito;
+        private System.Windows.Forms.ColumnHeader Efectivo;
+        private System.Windows.Forms.ColumnHeader Cheque;
+        private System.Windows.Forms.ColumnHeader Rut_Admin;
     }
 }

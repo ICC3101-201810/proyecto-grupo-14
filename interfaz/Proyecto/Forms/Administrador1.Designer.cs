@@ -30,11 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -60,6 +60,12 @@
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
+            // agregarStockToolStripMenuItem
+            // 
+            this.agregarStockToolStripMenuItem.Name = "agregarStockToolStripMenuItem";
+            this.agregarStockToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.agregarStockToolStripMenuItem.Text = "Agregar Stock";
+            // 
             // localToolStripMenuItem
             // 
             this.localToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -69,6 +75,18 @@
             this.localToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.localToolStripMenuItem.Text = "Local";
             // 
+            // verLocalToolStripMenuItem
+            // 
+            this.verLocalToolStripMenuItem.Name = "verLocalToolStripMenuItem";
+            this.verLocalToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.verLocalToolStripMenuItem.Text = "Ver Local";
+            // 
+            // editarLocalToolStripMenuItem
+            // 
+            this.editarLocalToolStripMenuItem.Name = "editarLocalToolStripMenuItem";
+            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.editarLocalToolStripMenuItem.Text = "Editar Local";
+            // 
             // cuentaToolStripMenuItem
             // 
             this.cuentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -77,29 +95,12 @@
             this.cuentaToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.cuentaToolStripMenuItem.Text = "Cuenta";
             // 
-            // agregarStockToolStripMenuItem
-            // 
-            this.agregarStockToolStripMenuItem.Name = "agregarStockToolStripMenuItem";
-            this.agregarStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarStockToolStripMenuItem.Text = "Agregar Stock";
-            // 
-            // verLocalToolStripMenuItem
-            // 
-            this.verLocalToolStripMenuItem.Name = "verLocalToolStripMenuItem";
-            this.verLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verLocalToolStripMenuItem.Text = "Ver Local";
-            // 
-            // editarLocalToolStripMenuItem
-            // 
-            this.editarLocalToolStripMenuItem.Name = "editarLocalToolStripMenuItem";
-            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editarLocalToolStripMenuItem.Text = "Editar Local";
-            // 
             // cambiarContraseñaToolStripMenuItem
             // 
             this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
             this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // cerrar
             // 
