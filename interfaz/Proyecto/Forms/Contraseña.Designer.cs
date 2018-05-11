@@ -75,6 +75,7 @@
             // 
             this.contraseña_a.Location = new System.Drawing.Point(154, 47);
             this.contraseña_a.Name = "contraseña_a";
+            this.contraseña_a.PasswordChar = '*';
             this.contraseña_a.Size = new System.Drawing.Size(206, 20);
             this.contraseña_a.TabIndex = 4;
             // 
@@ -82,6 +83,7 @@
             // 
             this.contraseña_n.Location = new System.Drawing.Point(154, 76);
             this.contraseña_n.Name = "contraseña_n";
+            this.contraseña_n.PasswordChar = '*';
             this.contraseña_n.Size = new System.Drawing.Size(206, 20);
             this.contraseña_n.TabIndex = 5;
             // 

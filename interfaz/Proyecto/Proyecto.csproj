@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contraseña.cs">
+    <Compile Include="Forms\Contraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contraseña.Designer.cs">
+    <Compile Include="Forms\Contraseña.Designer.cs">
       <DependentUpon>Contraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AgregarLocal.cs">
@@ -103,7 +103,7 @@
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
-    <EmbeddedResource Include="Contraseña.resx">
+    <EmbeddedResource Include="Forms\Contraseña.resx">
       <DependentUpon>Contraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AgregarLocal.resx">
