@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Banco.cs" />
     <Compile Include="Forms\AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>

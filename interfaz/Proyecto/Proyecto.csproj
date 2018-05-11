@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+ HEAD
     <Compile Include="Clases\Banco.cs" />
 =======
     <Compile Include="Forms\AgregarProducto.cs">
@@ -75,7 +75,7 @@
     <Compile Include="Forms\Cliente1.Designer.cs">
       <DependentUpon>Cliente1.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+HEAD
     <Compile Include="EditarLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,7 +141,7 @@
     <EmbeddedResource Include="Forms\Cliente1.resx">
       <DependentUpon>Cliente1.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+ HEAD
     <EmbeddedResource Include="EditarLocal.resx">
       <DependentUpon>EditarLocal.cs</DependentUpon>
     </EmbeddedResource>
