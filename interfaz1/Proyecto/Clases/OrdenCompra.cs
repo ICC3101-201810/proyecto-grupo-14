@@ -12,7 +12,7 @@ namespace Proyecto
         Cliente cliente;
         List<Producto> productos = new List<Producto>();
         Local local;
-
+        int id { get; set; }
         public OrdenCompra(Cliente Cliente, List<Producto> Productos, Local Local)
         {
             cliente = Cliente;

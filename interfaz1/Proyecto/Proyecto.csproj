@@ -90,6 +90,12 @@
     <Compile Include="Forms\Menu principal.Designer.cs">
       <DependentUpon>Menu principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Metodo de pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Metodo de pago.Designer.cs">
+      <DependentUpon>Metodo de pago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Padre1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="Clases\Padre.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Listas.cs" />
+    <Compile Include="Forms\Webpay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Webpay.Designer.cs">
+      <DependentUpon>Webpay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Registrar.cs">
