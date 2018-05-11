@@ -17,7 +17,6 @@ namespace Proyecto
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Padre";
-            listView1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,6 +80,13 @@ namespace Proyecto
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void editarLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditarLocal ed = new EditarLocal();
+            ed.Show();
+            listView1.Visible = false;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Proyecto
         }
         public bool NroDeCuenta(string nroCuenta, string rut)
         {
-            if (NroCuenta == NroCuenta && rut==Rut) {
+            if (NroCuenta == NroCuenta && rut == rut) {
                 return true;
             }
             return false;

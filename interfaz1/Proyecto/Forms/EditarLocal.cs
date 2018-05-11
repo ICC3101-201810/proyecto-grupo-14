@@ -15,6 +15,8 @@ namespace Proyecto
         public EditarLocal()
         {
             InitializeComponent();
+            this.Text = "Editar local";
+            this.CenterToScreen();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -129,17 +131,19 @@ namespace Proyecto
             {
                 if (textBox3.Text == "Monseñor...")
                 {
-                    Local local = new Local(textBox1.Text, textBox3.Text, textBox2.Text, checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked);
+                    Local local = new Local(textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked);
                     Listas.localesU.Add(local);
-                    MessageBox.Show("Local Agregado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    local.Eliminar(local, textBox1.Text);
+                    MessageBox.Show("Local Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
 
                 }
                 else
                 {
-                    Local local = new Local(textBox1.Text, textBox3.Text, textBox2.Text, checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked);
+                    Local local = new Local(textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked);
                     Listas.locales.Add(local);
-                    MessageBox.Show("Local Agregado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    local.Eliminar(local, textBox1.Text);
+                    MessageBox.Show("Local Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
 
                 }

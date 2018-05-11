@@ -98,6 +98,7 @@ namespace Proyecto
             this.Text = "Menu Principal";
         }
 
+
         private void Salir_Click(object sender, EventArgs e)
         {
             using (Stream stream = File.Open("padres.bin", FileMode.Create))
