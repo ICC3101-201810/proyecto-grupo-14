@@ -99,6 +99,7 @@ namespace Proyecto
                         productos.Add(producto);
                         local.EliminarProducto(productos, textBox6.Text, textBox1.Text);
                         MessageBox.Show("Producto Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
                     }
                 }
                 foreach (Local local in Listas.locales)
@@ -112,6 +113,7 @@ namespace Proyecto
                         productos.Add(producto);
                         local.EliminarProducto(productos, textBox6.Text, textBox1.Text);
                         MessageBox.Show("Producto Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
                     }
                 }
             }
