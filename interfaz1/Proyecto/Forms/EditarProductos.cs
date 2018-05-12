@@ -15,6 +15,8 @@ namespace Proyecto
         public EditarProductos()
         {
             InitializeComponent();
+            this.CenterToScreen();
+            this.Text = "Editar Producto";
         }
 
         private void button1_Click(object sender, EventArgs e)

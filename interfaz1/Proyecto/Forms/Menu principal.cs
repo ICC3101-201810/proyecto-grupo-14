@@ -19,7 +19,7 @@ namespace Proyecto
             InitializeComponent();
             try
             {
-                using (Stream stream = File.Open("Bancos.bin", FileMode.Open))
+                using (Stream stream = File.Open(@"\..\..\docs\Bancos.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     Listas.Cuentas = (List<Banco>)bin.Deserialize(stream);
@@ -30,7 +30,7 @@ namespace Proyecto
             }
             try
             {
-                using (Stream stream = File.Open("Ordenes.bin", FileMode.Open))
+                using (Stream stream = File.Open(@"\..\..\docs\Ordenes.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     Listas.OrdenesCompras = (List<OrdenCompra>)bin.Deserialize(stream);
@@ -41,7 +41,7 @@ namespace Proyecto
             }
             try
             {
-                using (Stream stream = File.Open("padres.bin", FileMode.Open))
+                using (Stream stream = File.Open(@"\..\..\docs\padres.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     Listas.padres = (List<Padre>)bin.Deserialize(stream);
@@ -52,7 +52,7 @@ namespace Proyecto
             }
             try
             {
-                using (Stream stream = File.Open("clientes.bin", FileMode.Open))
+                using (Stream stream = File.Open(@"\..\..\docs\clientes.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     Listas.clientes = (List<Cliente>)bin.Deserialize(stream);
@@ -63,7 +63,7 @@ namespace Proyecto
             }
             try
             {
-                using (Stream stream = File.Open("administradores.bin", FileMode.Open))
+                using (Stream stream = File.Open(@"\..\..\docs\administradores.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     Listas.administradores = (List<Administrador>)bin.Deserialize(stream);
@@ -74,7 +74,7 @@ namespace Proyecto
             }
             try
             {
-                using (Stream stream = File.Open("locales.bin", FileMode.Open))
+                using (Stream stream = File.Open(@"\..\..\docs\locales.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     Listas.locales = (List<Local>)bin.Deserialize(stream);
@@ -85,7 +85,7 @@ namespace Proyecto
             }
             try
             {
-                using (Stream stream = File.Open("localesU.bin", FileMode.Open))
+                using (Stream stream = File.Open(@"\..\..\docs\localesU.bin", FileMode.OpenOrCreate))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     Listas.localesU = (List<Local>)bin.Deserialize(stream);
@@ -101,40 +101,83 @@ namespace Proyecto
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            using (Stream stream = File.Open("padres.bin", FileMode.Create))
+            try
             {
-                BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, Listas.padres);
+                using (Stream stream = File.Open(@"\..\..\docs\padres.bin", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, Listas.padres);
+                }
             }
-            using (Stream stream = File.Open("Ordenes.bin", FileMode.Create))
+            catch (IOException)
             {
-                BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, Listas.OrdenesCompras);
             }
-            using (Stream stream = File.Open("Bancos.bin", FileMode.Create))
+            try
             {
-                BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, Listas.Cuentas);
+                using (Stream stream = File.Open(@"\..\..\docs\Ordenes.bin", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, Listas.OrdenesCompras);
+                }
             }
-            using (Stream stream = File.Open("clientes.bin", FileMode.Create))
+            catch (IOException)
             {
-                BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, Listas.clientes);
             }
-            using (Stream stream = File.Open("administradores.bin", FileMode.Create))
+            try
             {
-                BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, Listas.administradores);
+                using (Stream stream = File.Open(@"\..\..\docs\Bancos.bin", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, Listas.Cuentas);
+                }
             }
-            using (Stream stream = File.Open("locales.bin", FileMode.Create))
+            catch (IOException)
             {
-                BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, Listas.locales);
             }
-            using (Stream stream = File.Open("localesU.bin", FileMode.Create))
+            try
             {
-                BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, Listas.localesU);
+                using (Stream stream = File.Open(@"\..\..\docs\clientes.bin", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, Listas.clientes);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open(@"\..\..\docs\administradores.bin", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, Listas.administradores);
+                }
+            }
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open(@"\..\..\docs\locales.bin", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, Listas.locales);
+                }
+            }
+            
+            catch (IOException)
+            {
+            }
+            try
+            {
+                using (Stream stream = File.Open(@"\..\..\docs\localesU.bin", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, Listas.localesU);
+                }
+            }
+            catch (IOException)
+            {
             }
             Application.Exit();
         }
