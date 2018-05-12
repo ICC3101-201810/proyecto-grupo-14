@@ -107,38 +107,6 @@ namespace Proyecto
             return this.productos;
         }
 
-        public bool EliminarProducto(List<Producto> p, string rut, string nombre)
-        {
-            foreach (Local lc in Listas.locales)
-            {
-                if (lc.nombre == rut)
-                {
-                    foreach (Producto producto in p)
-                    {
-                        if (producto.nombre == nombre)
-                        {
-                            p.Remove(producto);
-                            return true;
-                        }
-                    }
-                }
-            }
-            foreach (Local lc in Listas.localesU)
-            {
-                if (lc.nombre == rut)
-                {
-                    foreach (Producto producto in p)
-                    {
-                        if (producto.nombre == nombre)
-                        {
-                            p.Remove(producto);
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
 
 
         public bool Eliminar(Local loc, string a)

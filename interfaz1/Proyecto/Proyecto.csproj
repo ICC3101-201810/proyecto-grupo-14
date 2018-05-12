@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Banco.cs" />
-    <Compile Include="Forms\EditarProductos.cs">
+    <Compile Include="Forms\Compralo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditarProductos.Designer.cs">
-      <DependentUpon>EditarProductos.cs</DependentUpon>
+    <Compile Include="Forms\Compralo.designer.cs">
+      <DependentUpon>Compralo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Compralu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Compralu.designer.cs">
+      <DependentUpon>Compralu.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditarLocal.cs">
       <SubType>Form</SubType>
@@ -125,6 +132,18 @@
     <Compile Include="Forms\Webpay.Designer.cs">
       <DependentUpon>Webpay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Locales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Locales.designer.cs">
+      <DependentUpon>Locales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocalesU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocalesU.designer.cs">
+      <DependentUpon>LocalesU.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Registrar.cs">
@@ -134,8 +153,11 @@
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
-    <EmbeddedResource Include="Forms\EditarProductos.resx">
-      <DependentUpon>EditarProductos.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Compralo.resx">
+      <DependentUpon>Compralo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Compralu.resx">
+      <DependentUpon>Compralu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditarLocal.resx">
       <DependentUpon>EditarLocal.cs</DependentUpon>
@@ -161,8 +183,20 @@
     <EmbeddedResource Include="Forms\Menu principal.resx">
       <DependentUpon>Menu principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Metodo de pago.resx">
+      <DependentUpon>Metodo de pago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Padre1.resx">
       <DependentUpon>Padre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Webpay.resx">
+      <DependentUpon>Webpay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Locales.resx">
+      <DependentUpon>Locales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalesU.resx">
+      <DependentUpon>LocalesU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

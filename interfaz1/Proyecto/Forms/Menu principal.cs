@@ -17,173 +17,45 @@ namespace Proyecto
         public Form1()
         {
             InitializeComponent();
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\Bancos.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    Listas.Cuentas = (List<Banco>)bin.Deserialize(stream);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\Ordenes.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    Listas.OrdenesCompras = (List<OrdenCompra>)bin.Deserialize(stream);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\padres.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    Listas.padres = (List<Padre>)bin.Deserialize(stream);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\clientes.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    Listas.clientes = (List<Cliente>)bin.Deserialize(stream);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\administradores.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    Listas.administradores = (List<Administrador>)bin.Deserialize(stream);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\locales.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    Listas.locales = (List<Local>)bin.Deserialize(stream);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\localesU.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    Listas.localesU = (List<Local>)bin.Deserialize(stream);
-                }
-            }
-            catch (IOException)
-            {
-            }
             this.CenterToScreen();
             this.Text = "Menu Principal";
+            
+            
         }
 
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\padres.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, Listas.padres);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\Ordenes.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, Listas.OrdenesCompras);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\Bancos.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, Listas.Cuentas);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\clientes.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, Listas.clientes);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\administradores.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, Listas.administradores);
-                }
-            }
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\locales.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, Listas.locales);
-                }
-            }
-            
-            catch (IOException)
-            {
-            }
-            try
-            {
-                using (Stream stream = File.Open(@"\..\..\docs\localesU.bin", FileMode.OpenOrCreate))
-                {
-                    BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, Listas.localesU);
-                }
-            }
-            catch (IOException)
-            {
-            }
+            Listas.SerializarP(Listas.padres);
+            Listas.SerializarA(Listas.administradores);
+            Listas.SerializarC(Listas.clientes);
+            Listas.SerializarL(Listas.locales);
+            Listas.SerializarL(Listas.locales);
             Application.Exit();
         }
 
         private void Ingresar_Click(object sender, EventArgs e)
         {
+            foreach (Padre p in Listas.DeserializarP("padres.dat"))
+            {
+                Listas.padres.Add(p);
+            }
+            foreach (Administrador a in Listas.DeserializarA("admin.dat"))
+            {
+                Listas.administradores.Add(a);
+            }
+            foreach (Cliente c in Listas.DeserializarC("cliente.dat"))
+            {
+                Listas.clientes.Add(c);
+            }
+            foreach (Local l in Listas.DeserializarL("local.dat"))
+            {
+                Listas.locales.Add(l);
+            }
+            foreach (Local l in Listas.DeserializarLU("localu.dat"))
+            {
+                Listas.localesU.Add(l);
+            }
             int o = 0;
             foreach(Cliente c in Listas.clientes)
             {

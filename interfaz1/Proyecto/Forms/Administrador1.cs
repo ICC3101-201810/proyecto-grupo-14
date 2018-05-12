@@ -55,15 +55,10 @@ namespace Proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            textBox1.Visible = true;
-            button1.Visible = true;
-            int i = 0;
             foreach (Local local in Listas.locales)
             {
                 if (local.rutAdmin == textBox1.Text)
                 {
-                    i++;
                     label1.Visible = false;
                     textBox1.Visible = false;
                     button1.Visible = false;
@@ -80,12 +75,12 @@ namespace Proyecto
                     }
                 }
             }
-            
+            label1.Visible = true;
+            textBox1.Visible = true;
             foreach (Local local in Listas.localesU)
             {
                 if (local.rutAdmin == textBox1.Text)
                 {
-                    i++;
                     listView1.Visible = true;
                     listView1.Items.Clear();
                     List<Producto> productos = local.GetProductos();
@@ -99,20 +94,6 @@ namespace Proyecto
                     }
                 }
             }
-            if (i == 0)
-            {
-                label1.Visible = false;
-                textBox1.Visible = false;
-                button1.Visible = false;
-                listView1.Visible = false;
-                MessageBox.Show("Productos no encontrados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void editarLocalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EditarProductos ep = new EditarProductos();
-            ep.Show();
         }
     }
 }

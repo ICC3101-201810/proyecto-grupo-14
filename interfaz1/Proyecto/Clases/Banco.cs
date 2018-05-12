@@ -19,8 +19,14 @@ namespace Proyecto
         public Banco(string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Nombre, Contraseña, Dinero)
         {
         }
-        public bool NroDeCuenta(string nroCuenta, string rut)
+        public bool NroDeCuenta(string nroCuenta, Banco Cl)
         {
+
+            if (nroCuenta == Cl.NroCuenta && rut == Cl.rut)
+            {
+                return true;
+            }
+
             if (NroCuenta == NroCuenta && rut == rut) {
                 return true;
             }
