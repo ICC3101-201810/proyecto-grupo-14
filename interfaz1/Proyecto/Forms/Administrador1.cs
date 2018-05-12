@@ -95,5 +95,10 @@ namespace Proyecto
                 }
             }
         }
+
+        private void editarLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

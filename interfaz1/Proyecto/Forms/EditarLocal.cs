@@ -31,11 +31,12 @@ namespace Proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int i = 0;
             foreach (Local la in Listas.locales)
             {
                 if (la.nombre == textBox1.Text)
                 {
+                    i++;
                     textBox2.Enabled = true;
                     label2.Enabled = true;
                     textBox3.Enabled = true;
@@ -52,24 +53,6 @@ namespace Proyecto
 
 
                 }
-                else
-                {
-                    textBox2.Enabled = false;
-                    label2.Enabled = false;
-                    textBox3.Enabled = false;
-                    label3.Enabled = false;
-                    textBox4.Enabled = false;
-                    label4.Enabled = false;
-                    label5.Enabled = false;
-                    checkBox1.Enabled = false;
-                    checkBox2.Enabled = false;
-                    checkBox3.Enabled = false;
-                    checkBox4.Enabled = false;
-                    checkBox5.Enabled = false;
-                    button2.Enabled = false;
-                    MessageBox.Show("Local no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
 
             }
 
@@ -77,6 +60,7 @@ namespace Proyecto
             {
                 if (laU.nombre == textBox1.Text)
                 {
+                    i++;
                     textBox2.Enabled = true;
                     label2.Enabled = true;
                     textBox3.Enabled = true;
@@ -91,28 +75,26 @@ namespace Proyecto
                     checkBox5.Enabled = true;
                     button2.Enabled= true;
                 }
-                else
-                {
-                    textBox2.Enabled = false;
-                    label2.Enabled = false;
-                    textBox3.Enabled = false;
-                    label3.Enabled = false;
-                    textBox4.Enabled = false;
-                    label4.Enabled = false;
-                    label5.Enabled = false;
-                    checkBox1.Enabled = false;
-                    checkBox2.Enabled = false;
-                    checkBox3.Enabled = false;
-                    checkBox4.Enabled = false;
-                    checkBox5.Enabled = false;
-                    button2.Enabled =false;
-                    MessageBox.Show("Local no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-
+            }
+            if (i == 0)
+            {
+                textBox2.Enabled = false;
+                label2.Enabled = false;
+                textBox3.Enabled = false;
+                label3.Enabled = false;
+                textBox4.Enabled = false;
+                label4.Enabled = false;
+                label5.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
+                checkBox5.Enabled = false;
+                button2.Enabled = false;
+                MessageBox.Show("Local no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
