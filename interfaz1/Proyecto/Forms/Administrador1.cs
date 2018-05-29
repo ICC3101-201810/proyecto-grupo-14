@@ -11,9 +11,16 @@ using System.Windows.Forms;
 namespace Proyecto
 {
     public partial class Administrador1 : Form
+
     {
-        public Administrador1()
+        Administrador current;
+        Usuario currentU;
+        Form1 parentWindow;
+        public Administrador1(Administrador a, Form1 parentWindow)
         {
+            this.parentWindow = parentWindow;
+            this.current = a;
+            this.currentU = (Usuario)current;
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Administrador";
@@ -21,79 +28,76 @@ namespace Proyecto
 
         private void cerrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 menu = new Form1();
-            menu.Show();
+            this.Close();
         }
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Contraseña contraseña = new Contraseña();
             contraseña.Show();
-            label1.Visible = false;
-            textBox1.Visible = false;
             listView1.Visible = false;
-            button1.Visible = false;
         }
 
         private void agregarStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgregarProducto ag = new AgregarProducto();
+            AgregarProducto ag = new AgregarProducto(current);
             ag.Show();
-            label1.Visible = false;
-            textBox1.Visible = false;
             listView1.Visible = false;
-            button1.Visible = false;
         }
 
         private void verLocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            textBox1.Visible = true;
-            button1.Visible = true;
+            foreach (Local local in Listas.locales)
+            {
+                if (local.RutAdmin == current.rut)
+                {
+                    listView1.Visible = true;
+                    listView1.Items.Clear();
+                    List<Producto> productos = local.GetProductos();
+                    foreach (Producto producto in productos)
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item = listView1.Items.Add(producto.Nombre);
+                        item.SubItems.Add(producto.Marca);
+                        item.SubItems.Add(producto.Precio.ToString());
+                        item.SubItems.Add(producto.Stock.ToString());
+                    }
+                }
+            }
+            foreach (Local local in Listas.localesU)
+            {
+                if (local.RutAdmin == current.rut)
+                {
+                    listView1.Visible = true;
+                    listView1.Items.Clear();
+                    List<Producto> productos = local.GetProductos();
+                    foreach (Producto producto in productos)
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item = listView1.Items.Add(producto.Nombre);
+                        item.SubItems.Add(producto.Marca);
+                        item.SubItems.Add(producto.Precio.ToString());
+                        item.SubItems.Add(producto.Stock.ToString());
+                    }
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Local local in Listas.locales)
-            {
-                if (local.rutAdmin == textBox1.Text)
-                {
-                    label1.Visible = false;
-                    textBox1.Visible = false;
-                    button1.Visible = false;
-                    listView1.Visible = true;
-                    listView1.Items.Clear();
-                    List<Producto> productos = local.GetProductos();
-                    foreach (Producto producto in productos)
-                    {
-                        ListViewItem item = new ListViewItem();
-                        item = listView1.Items.Add(producto.nombre);
-                        item.SubItems.Add(producto.marca);
-                        item.SubItems.Add(producto.precio.ToString());
-                        item.SubItems.Add(producto.stock.ToString());
-                    }
-                }
-            }
-            label1.Visible = true;
-            textBox1.Visible = true;
-            foreach (Local local in Listas.localesU)
-            {
-                if (local.rutAdmin == textBox1.Text)
-                {
-                    listView1.Visible = true;
-                    listView1.Items.Clear();
-                    List<Producto> productos = local.GetProductos();
-                    foreach (Producto producto in productos)
-                    {
-                        ListViewItem item = new ListViewItem();
-                        item = listView1.Items.Add(producto.nombre);
-                        item.SubItems.Add(producto.marca);
-                        item.SubItems.Add(producto.precio.ToString());
-                        item.SubItems.Add(producto.stock.ToString());
-                    }
-                }
-            }
+            
+        }
+
+        private void editarLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editarProducto ep = new editarProducto(current);
+            ep.Show();
+            listView1.Visible = false;
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            parentWindow.Show();
+            base.OnClosed(e);
         }
     }
 }

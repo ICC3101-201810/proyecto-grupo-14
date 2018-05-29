@@ -34,15 +34,15 @@ namespace Proyecto
 
             foreach (Local la in Listas.locales)
             {
-                if (la.nombre == textBox1.Text)
+                if (la.Nombre == textBox1.Text)
                 {
                     textBox2.Enabled = true;
                     label2.Enabled = true;
                     textBox3.Enabled = true;
                     label3.Enabled = true;
+                    label5.Enabled = true;
                     textBox4.Enabled = true;
                     label4.Enabled = true;
-                    label5.Enabled = true;
                     checkBox1.Enabled = true;
                     checkBox2.Enabled = true;
                     checkBox3.Enabled = true;
@@ -75,7 +75,7 @@ namespace Proyecto
 
             foreach (Local laU in Listas.localesU)
             {
-                if (laU.nombre == textBox1.Text)
+                if (laU.Nombre == textBox1.Text)
                 {
                     textBox2.Enabled = true;
                     label2.Enabled = true;
@@ -148,6 +148,11 @@ namespace Proyecto
 
                 }
             }
+        }
+
+        private void EditarLocal_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

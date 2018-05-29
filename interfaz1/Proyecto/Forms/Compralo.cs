@@ -22,7 +22,7 @@ namespace Proyecto
             int ar = 0;
             foreach (Local loca in Listas.localesU)
             {
-                if (textBox1.Text == loca.rutAdmin)
+                if (textBox1.Text == loca.RutAdmin)
                 {
                     ar += 1;
                     label2.Enabled = true;
@@ -49,17 +49,17 @@ namespace Proyecto
         {
             foreach (Local lq in Listas.localesU)
             {
-                if (textBox1.Text == lq.rutAdmin)
+                if (textBox1.Text == lq.RutAdmin)
                 {
                     listView1.Visible = true;
                     List<Producto> pq = lq.GetProductos();
                     foreach (Producto local in pq)
                     {
                         ListViewItem item = new ListViewItem();
-                        item = listView1.Items.Add(local.nombre);
-                        item.SubItems.Add(local.marca);
-                        item.SubItems.Add(local.precio.ToString());
-                        item.SubItems.Add(local.stock.ToString());
+                        item = listView1.Items.Add(local.Nombre);
+                        item.SubItems.Add(local.Marca);
+                        item.SubItems.Add(local.Precio.ToString());
+                        item.SubItems.Add(local.Stock.ToString());
 
                     }
                 }
@@ -88,7 +88,7 @@ namespace Proyecto
             {
                 foreach (Local lq in Listas.localesU)
                 {
-                    if (textBox1.Text == lq.rutAdmin)
+                    if (textBox1.Text == lq.RutAdmin)
                     {
 
                         List<Producto> pq = lq.GetProductos();

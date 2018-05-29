@@ -11,14 +11,23 @@ namespace Proyecto
     {
         List<Producto> productos = new List<Producto>();
         List<OrdenCompra> ordenCompras = new List<OrdenCompra>();
-        public string nombre;
-        public string direccion;
-        public bool despacho;
-        public bool efectivo;
-        public bool debito;
-        public bool credito;
-        public bool cheque;
-        public string rutAdmin;
+        private string nombre;
+        private string direccion;
+        private bool despacho;
+        private bool efectivo;
+        private bool debito;
+        private bool credito;
+        private bool cheque;
+        private string rutAdmin;
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public bool Despacho { get => despacho; set => despacho = value; }
+        public bool Efectivo { get => efectivo; set => efectivo = value; }
+        public bool Debito { get => debito; set => debito = value; }
+        public bool Credito { get => credito; set => credito = value; }
+        public bool Cheque { get => cheque; set => cheque = value; }
+        public string RutAdmin { get => rutAdmin; set => rutAdmin = value; }
 
         public Local(string Nombre, string Direccion, string RutAdmin, bool Despacho, bool Efectivo, bool Debito, bool Credito, bool Cheque)
         {
@@ -55,10 +64,6 @@ namespace Proyecto
             }
             return validacion;
         }
-        public void verInfo()
-        {
-            Console.WriteLine("Nombre: " + nombre + ", direccion: " + direccion + ", rut admin: " + rutAdmin + ", despacho: " + despacho + ", efectivo: " + efectivo + ", debito: " + debito + ", credito: " + credito + ", cheque: " + cheque);
-        }
 
         public bool perteneceUniversidad(string direccion)
         {
@@ -71,8 +76,8 @@ namespace Proyecto
 
         public bool verificarAdministradorLocal(Local local, Administrador administrador)
         {
-            local.rutAdmin = local.rutAdmin.Replace("-", "");
-            if (local.rutAdmin == administrador.rut)
+            local.RutAdmin = local.RutAdmin.Replace("-", "");
+            if (local.RutAdmin == administrador.rut)
             {
                 return true;
             }
@@ -94,7 +99,7 @@ namespace Proyecto
         {
             foreach (Producto producto in productos)
             {
-                if (nombre == producto.nombre)
+                if (nombre == producto.Nombre)
                 {
 
                     return true;
@@ -115,7 +120,7 @@ namespace Proyecto
             foreach (Local lc in Listas.locales)
             {
                 
-                if (lc.nombre == a)
+                if (lc.Nombre == a)
                 {
                     Listas.locales.Remove(lc);
                     return true;
@@ -127,7 +132,7 @@ namespace Proyecto
             {
                 
                 
-                if (lcU.nombre == a)
+                if (lcU.Nombre == a)
                 {
                     Listas.localesU.Remove(lcU);
                     return true;
@@ -139,13 +144,6 @@ namespace Proyecto
             return false;
 
             
-        }
-        public void verProductos()
-        {
-            foreach (Producto producto in productos)
-            {
-                producto.verInfoProducto();
-            }
         }
 
         

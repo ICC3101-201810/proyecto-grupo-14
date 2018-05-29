@@ -21,7 +21,6 @@ namespace Proyecto
         }
         public bool NroDeCuenta(string nroCuenta, Banco Cl)
         {
-
             if (nroCuenta == Cl.NroCuenta && rut == Cl.rut)
             {
                 return true;

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Banco.cs" />
+    <Compile Include="Forms\editarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\editarProducto.Designer.cs">
+      <DependentUpon>editarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Compralo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cliente1.resx">
       <DependentUpon>Cliente1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\editarProducto.resx">
+      <DependentUpon>editarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EliminarLocal.resx">
       <DependentUpon>EliminarLocal.cs</DependentUpon>
