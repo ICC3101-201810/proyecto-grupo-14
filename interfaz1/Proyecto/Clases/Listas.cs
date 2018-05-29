@@ -21,6 +21,7 @@ namespace Proyecto
 
         public static void SerializarP(List<Padre> plistaPersona)
         {
+
             FileStream _fs = new FileStream(@"..\..\docs\padres.dat", FileMode.Create);
             BinaryFormatter _formatter = new BinaryFormatter();
             _formatter.Serialize(_fs, plistaPersona);
@@ -28,11 +29,17 @@ namespace Proyecto
         }
         public static List<Padre> DeserializarP(string pArchivo)
         {
-            FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
-            BinaryFormatter _formatter = new BinaryFormatter();
-            List<Padre> _persona = _formatter.Deserialize(_fs) as List<Padre>;
-            _fs.Close();
-            return _persona;
+            if (File.Exists(@"..\..\docs\" + pArchivo) == true )
+            {
+                FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
+                BinaryFormatter _formatter = new BinaryFormatter();
+                List<Padre> _persona = _formatter.Deserialize(_fs) as List<Padre>;
+                _fs.Close();
+                return _persona;
+            }
+            return new List<Padre>();
+
+
         }
         public static void SerializarA(List<Administrador> plistaPersona)
         {
@@ -43,11 +50,15 @@ namespace Proyecto
         }
         public static List<Administrador> DeserializarA(string pArchivo)
         {
-            FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
-            BinaryFormatter _formatter = new BinaryFormatter();
-            List<Administrador> _persona = _formatter.Deserialize(_fs) as List<Administrador>;
-            _fs.Close();
-            return _persona;
+            if (File.Exists(@"..\..\docs\" + pArchivo) == true)
+            {
+                FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
+                BinaryFormatter _formatter = new BinaryFormatter();
+                List<Administrador> _persona = _formatter.Deserialize(_fs) as List<Administrador>;
+                _fs.Close();
+                return _persona;
+            }
+            return new List<Administrador>();
         }
         public static void SerializarC(List<Cliente> plistaPersona)
         {
@@ -58,12 +69,17 @@ namespace Proyecto
         }
         public static List<Cliente> DeserializarC(string pArchivo)
         {
-            FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
-            BinaryFormatter _formatter = new BinaryFormatter();
-            List<Cliente> _persona = _formatter.Deserialize(_fs) as List<Cliente>;
-            _fs.Close();
-            return _persona;
+            if (File.Exists(@"..\..\docs\" + pArchivo) == true)
+            {
+                FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
+                BinaryFormatter _formatter = new BinaryFormatter();
+                List<Cliente> _persona = _formatter.Deserialize(_fs) as List<Cliente>;
+                _fs.Close();
+                return _persona;
+            }
+            return new List<Cliente>();
         }
+        
         public static void SerializarLU(List<Local> plistaPersona)
         {
             FileStream _fs = new FileStream(@"..\..\docs\localu.dat", FileMode.Create);
@@ -73,11 +89,15 @@ namespace Proyecto
         }
         public static List<Local> DeserializarLU(string pArchivo)
         {
-            FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
-            BinaryFormatter _formatter = new BinaryFormatter();
-            List<Local> _persona = _formatter.Deserialize(_fs) as List<Local>;
-            _fs.Close();
-            return _persona;
+            if (File.Exists(@"..\..\docs\" + pArchivo) == true)
+            {
+                FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
+                BinaryFormatter _formatter = new BinaryFormatter();
+                List<Local> _persona = _formatter.Deserialize(_fs) as List<Local>;
+                _fs.Close();
+                return _persona;
+            }
+            return new List<Local>();
         }
         public static void SerializarL(List<Local> plistaPersona)
         {
@@ -88,11 +108,15 @@ namespace Proyecto
         }
         public static List<Local> DeserializarL(string pArchivo)
         {
-            FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
-            BinaryFormatter _formatter = new BinaryFormatter();
-            List<Local> _persona = _formatter.Deserialize(_fs) as List<Local>;
-            _fs.Close();
-            return _persona;
+            if (File.Exists(@"..\..\docs\" + pArchivo) == true)
+            {
+                FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
+                BinaryFormatter _formatter = new BinaryFormatter();
+                List<Local> _persona = _formatter.Deserialize(_fs) as List<Local>;
+                _fs.Close();
+                return _persona;
+            } 
+            return new List<Local>();
         }
     }
 }

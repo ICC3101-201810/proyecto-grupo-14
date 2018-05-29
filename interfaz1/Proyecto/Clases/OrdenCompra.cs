@@ -24,7 +24,7 @@ namespace Proyecto
             int suma = 0;
             foreach (Producto producto in productos)
             {
-                suma = suma + producto.precio;
+                suma = suma + producto.Precio;
             }
             if (suma > cliente.dinero)
             {
@@ -38,8 +38,8 @@ namespace Proyecto
             Console.WriteLine("El cliente: " + cliente.nombre + " compro: ");
             foreach (Producto producto in productos)
             {
-                Console.WriteLine("Producto: " + producto.nombre + ", marca " + producto.marca + " ............ $" + producto.precio);
-                suma = suma + producto.precio;
+                Console.WriteLine("Producto: " + producto.Nombre + ", marca " + producto.Marca + " ............ $" + producto.Precio);
+                suma = suma + producto.Precio;
             }
             Console.WriteLine("Por un total de " + suma);
             Console.WriteLine("En el horario: " + DateTime.Now);

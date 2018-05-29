@@ -9,10 +9,15 @@ namespace Proyecto
     [Serializable()]
     public class Producto
     {
-        public string nombre;
-        public string marca;
-        public int precio;
-        public int stock;
+        private string nombre;
+        private string marca;
+        private int precio;
+        private int stock;
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Marca { get => marca; set => marca = value; }
+        public int Precio { get => precio; set => precio = value; }
+        public int Stock { get => stock; set => stock = value; }
 
         public Producto(string Nombre, string Marca, int Precio, int Stock)
         {
@@ -20,10 +25,6 @@ namespace Proyecto
             marca = Marca;
             precio = Precio;
             stock = Stock;
-        }
-        public void verInfoProducto()
-        {
-            Console.WriteLine("Nombre: " + nombre + ", marca: " + marca + ", precio: " + precio + ", stock: " + stock);
         }
 
     }

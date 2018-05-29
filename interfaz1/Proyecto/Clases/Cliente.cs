@@ -31,7 +31,7 @@ namespace Proyecto
 
             if (metodo == "1")
             {
-                if (local.efectivo == true)
+                if (local.Efectivo == true)
                 {
                     return true;
                 }
@@ -40,7 +40,7 @@ namespace Proyecto
 
             else if (metodo == "2")
             {
-                if (local.debito == true)
+                if (local.Debito == true)
                 {
                     return true;
                 }
@@ -49,7 +49,7 @@ namespace Proyecto
 
             else if (metodo == "3")
             {
-                if (local.credito == true)
+                if (local.Credito == true)
                 {
                     return true;
                 }
@@ -58,7 +58,7 @@ namespace Proyecto
 
             else if (metodo == "4")
             {
-                if (local.cheque == true)
+                if (local.Cheque == true)
                 {
                     return true;
                 }

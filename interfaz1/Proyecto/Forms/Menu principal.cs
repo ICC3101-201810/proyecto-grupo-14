@@ -16,26 +16,10 @@ namespace Proyecto
     {
         public Form1()
         {
+            
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Menu Principal";
-            
-            
-        }
-
-
-        private void Salir_Click(object sender, EventArgs e)
-        {
-            Listas.SerializarP(Listas.padres);
-            Listas.SerializarA(Listas.administradores);
-            Listas.SerializarC(Listas.clientes);
-            Listas.SerializarL(Listas.locales);
-            Listas.SerializarL(Listas.locales);
-            Application.Exit();
-        }
-
-        private void Ingresar_Click(object sender, EventArgs e)
-        {
             foreach (Padre p in Listas.DeserializarP("padres.dat"))
             {
                 Listas.padres.Add(p);
@@ -56,6 +40,23 @@ namespace Proyecto
             {
                 Listas.localesU.Add(l);
             }
+
+        }
+
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            Listas.SerializarP(Listas.padres);
+            Listas.SerializarA(Listas.administradores);
+            Listas.SerializarC(Listas.clientes);
+            Listas.SerializarL(Listas.locales);
+            Listas.SerializarL(Listas.locales);
+            Application.Exit();
+        }
+
+        private void Ingresar_Click(object sender, EventArgs e)
+        {
+            
             int o = 0;
             foreach(Cliente c in Listas.clientes)
             {
@@ -65,6 +66,7 @@ namespace Proyecto
                     this.Hide();
                     Cliente1 cliente = new Cliente1();
                     cliente.Show();
+                    break;
 
                 }
             }
@@ -74,8 +76,9 @@ namespace Proyecto
                 {
                     o++;
                     this.Hide();
-                    Administrador1 administrador = new Administrador1();
+                    Administrador1 administrador = new Administrador1(a,this);
                     administrador.Show();
+                    break;
                 }
             }
 
@@ -85,8 +88,9 @@ namespace Proyecto
                 {
                     o++;
                     this.Hide();
-                    Padre1 padre = new Padre1();
+                    Padre1 padre = new Padre1(this);
                     padre.Show();
+                    break;
 
                 }
             }
@@ -101,6 +105,11 @@ namespace Proyecto
             this.Hide();
             Registrar registrar = new Registrar();
             registrar.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

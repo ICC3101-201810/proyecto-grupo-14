@@ -12,8 +12,10 @@ namespace Proyecto
 {
     public partial class Padre1 : Form
     {
-        public Padre1()
+        Form1 parentWindow;
+        public Padre1(Form1 parentWindow)
         {
+            this.parentWindow = parentWindow;
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Padre";
@@ -21,9 +23,7 @@ namespace Proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 menu = new Form1();
-            menu.Show();
+            this.Close();
         }
 
         private void agregarLocalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,26 +54,26 @@ namespace Proyecto
             foreach (Local local in Listas.locales)
             {
                 ListViewItem item = new ListViewItem();
-                item = listView1.Items.Add(local.nombre);
-                item.SubItems.Add(local.direccion);
-                item.SubItems.Add(local.despacho.ToString());
-                item.SubItems.Add(local.credito.ToString());
-                item.SubItems.Add(local.debito.ToString());
-                item.SubItems.Add(local.efectivo.ToString());
-                item.SubItems.Add(local.cheque.ToString());
-                item.SubItems.Add(local.rutAdmin.ToString());
+                item = listView1.Items.Add(local.Nombre);
+                item.SubItems.Add(local.Direccion);
+                item.SubItems.Add(local.Despacho.ToString());
+                item.SubItems.Add(local.Credito.ToString());
+                item.SubItems.Add(local.Debito.ToString());
+                item.SubItems.Add(local.Efectivo.ToString());
+                item.SubItems.Add(local.Cheque.ToString());
+                item.SubItems.Add(local.RutAdmin);
             }
             foreach (Local local in Listas.localesU)
             {
                 ListViewItem item = new ListViewItem();
-                item = listView1.Items.Add(local.nombre);
-                item.SubItems.Add(local.direccion);
-                item.SubItems.Add(local.despacho.ToString());
-                item.SubItems.Add(local.credito.ToString());
-                item.SubItems.Add(local.debito.ToString());
-                item.SubItems.Add(local.efectivo.ToString());
-                item.SubItems.Add(local.cheque.ToString());
-                item.SubItems.Add(local.rutAdmin.ToString());
+                item = listView1.Items.Add(local.Nombre);
+                item.SubItems.Add(local.Direccion);
+                item.SubItems.Add(local.Despacho.ToString());
+                item.SubItems.Add(local.Credito.ToString());
+                item.SubItems.Add(local.Debito.ToString());
+                item.SubItems.Add(local.Efectivo.ToString());
+                item.SubItems.Add(local.Cheque.ToString());
+                item.SubItems.Add(local.RutAdmin);
             }
         }
 
@@ -87,6 +87,11 @@ namespace Proyecto
             EditarLocal ed = new EditarLocal();
             ed.Show();
             listView1.Visible = false;
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            parentWindow.Show();
+            base.OnClosed(e);
         }
     }
 }

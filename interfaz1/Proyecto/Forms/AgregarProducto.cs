@@ -12,8 +12,10 @@ namespace Proyecto
 {
     public partial class AgregarProducto : Form
     {
-        public AgregarProducto()
+        Administrador current;
+        public AgregarProducto(Administrador a)
         {
+            this.current = a;
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Agegar Producto";
@@ -24,7 +26,7 @@ namespace Proyecto
             int i = 0;
             foreach (Local local in Listas.locales)
             {
-                if (local.rutAdmin == textBox5.Text)
+                if (local.RutAdmin == current.rut)
                 {
                     i++;
                     int precio = Int32.Parse(textBox3.Text);
@@ -37,7 +39,7 @@ namespace Proyecto
             }
             foreach (Local local in Listas.localesU)
             {
-                if (local.rutAdmin == textBox5.Text)
+                if (local.RutAdmin == current.rut)
                 {
                     i++;
                     int precio = Int32.Parse(textBox3.Text);
@@ -55,7 +57,6 @@ namespace Proyecto
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
             }
 
 

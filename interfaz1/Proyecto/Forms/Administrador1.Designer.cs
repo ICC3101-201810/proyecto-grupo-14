@@ -42,9 +42,6 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +68,7 @@
             // agregarStockToolStripMenuItem
             // 
             this.agregarStockToolStripMenuItem.Name = "agregarStockToolStripMenuItem";
-            this.agregarStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarStockToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.agregarStockToolStripMenuItem.Text = "Agregar Stock";
             this.agregarStockToolStripMenuItem.Click += new System.EventHandler(this.agregarStockToolStripMenuItem_Click);
             // 
@@ -87,15 +84,16 @@
             // verLocalToolStripMenuItem
             // 
             this.verLocalToolStripMenuItem.Name = "verLocalToolStripMenuItem";
-            this.verLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verLocalToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.verLocalToolStripMenuItem.Text = "Ver Local";
             this.verLocalToolStripMenuItem.Click += new System.EventHandler(this.verLocalToolStripMenuItem_Click);
             // 
             // editarLocalToolStripMenuItem
             // 
             this.editarLocalToolStripMenuItem.Name = "editarLocalToolStripMenuItem";
-            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editarLocalToolStripMenuItem.Text = "Editar Local";
+            this.editarLocalToolStripMenuItem.Click += new System.EventHandler(this.editarLocalToolStripMenuItem_Click);
             // 
             // cuentaToolStripMenuItem
             // 
@@ -154,43 +152,11 @@
             // 
             this.columnHeader4.Text = "Stock";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(130, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(171, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Ingrese rut";
-            this.label1.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(275, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Administrador1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 179);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.cerrar);
             this.Controls.Add(this.menuStrip1);
@@ -220,8 +186,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
     }
 }
