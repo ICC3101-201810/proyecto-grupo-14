@@ -16,7 +16,8 @@ namespace Proyecto.Forms
         {
             InitializeComponent();
         }
-
+        Banco cl;
+        float monto;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -24,10 +25,24 @@ namespace Proyecto.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string a = textBox1.Text;
+            string b = textBox2.Text;
+            cl.PagoConDebito(a,b,monto,cl)
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            Parent.Show();
+        }
+
+        private void Webpay_Load(object sender, EventArgs e)
         {
 
         }

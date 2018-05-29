@@ -27,7 +27,7 @@ namespace Proyecto
                 return true;
             }
 
-            if (NroCuenta == NroCuenta && rut == rut) {
+            if (NroCuenta == Cl.NroCuenta && rut == Cl.rut) {
                 return true;
             }
             return false;

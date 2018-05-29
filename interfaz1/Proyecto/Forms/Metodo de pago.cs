@@ -16,5 +16,30 @@ namespace Proyecto.Forms
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Webpay menu = new Webpay();
+            menu.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WebpayC menu = new WebpayC();
+            menu.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //efectivo
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Parent.Show();
+        }
     }
 }
