@@ -27,7 +27,7 @@ namespace Proyecto.Forms
             this.CenterToScreen();
             this.Text = "Webpay tarjeta de debito";
         }
-        float monto=;
+        float monto=0;
 
         private void label1_Click(object sender, EventArgs e)
         {
