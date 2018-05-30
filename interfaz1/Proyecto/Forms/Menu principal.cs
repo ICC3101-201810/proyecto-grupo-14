@@ -40,7 +40,11 @@ namespace Proyecto
             {
                 Listas.localesU.Add(l);
             }
-            
+            foreach (Banco l in Listas.DeserializarB("banco.dat"))
+            {
+                Listas.Cuentas.Add(l);
+            }
+
         }
         private void Salir_Click(object sender, EventArgs e)
         {
@@ -49,6 +53,7 @@ namespace Proyecto
             Listas.SerializarC(Listas.clientes);
             Listas.SerializarL(Listas.locales);
             Listas.SerializarLU(Listas.localesU);
+            Listas.SerializarB(Listas.Cuentas);
             Application.Exit();
         }
 

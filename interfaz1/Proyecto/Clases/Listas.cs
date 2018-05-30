@@ -118,7 +118,7 @@ namespace Proyecto
             }
             return new List<Local>();
         }
-        public static void SerializarL(List<Banco> plistaPersona)
+        public static void SerializarB(List<Banco> plistaPersona)
             {
                 FileStream _fs = new FileStream(@"..\..\docs\banco.dat", FileMode.Create);
                 BinaryFormatter _formatter = new BinaryFormatter();
