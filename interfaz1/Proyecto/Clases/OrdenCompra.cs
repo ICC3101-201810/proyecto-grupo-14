@@ -44,7 +44,15 @@ namespace Proyecto
             Console.WriteLine("Por un total de " + suma);
             Console.WriteLine("En el horario: " + DateTime.Now);
         }
-
+        public float VerMonto(Cliente cliente)
+            {
+            float suma = 0;
+            foreach (Producto producto in productos)
+            {
+                suma = suma + producto.Precio;
+            }
+            return suma;
+        }
 
     }
 }

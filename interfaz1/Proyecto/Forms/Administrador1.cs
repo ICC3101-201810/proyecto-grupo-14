@@ -104,5 +104,15 @@ namespace Proyecto
         {
 
         }
+
+        private void Administrador1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Administrador1_Load_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }

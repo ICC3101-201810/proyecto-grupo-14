@@ -12,10 +12,19 @@ namespace Proyecto
 {
     public partial class Compralu : Form
     {
-        public Compralu()
+        Cliente current;
+        OrdenCompra currentc;
+        Usuario currentU;
+        Form1 parentWindow;
+        public Compralu(Cliente a,OrdenCompra b, Form1 parentWindow)
         {
-           
+            this.parentWindow = parentWindow ;
+            this.currentc = b;
+            this.current = a;
+            this.currentU = (Usuario)current;
             InitializeComponent();
+            this.CenterToScreen();
+            this.Text = "Webpay tarjeta de debito";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -106,6 +115,11 @@ namespace Proyecto
             this.Hide();
             Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago;
             mt.Show();
+        }
+
+        private void Compralu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

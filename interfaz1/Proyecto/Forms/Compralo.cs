@@ -102,8 +102,13 @@ namespace Proyecto
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago;
+            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago();
             mt.Show();
+        }
+
+        private void Compralo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

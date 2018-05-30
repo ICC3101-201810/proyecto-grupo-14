@@ -9,13 +9,11 @@ namespace Proyecto
     [Serializable()]
     public class Usuario
     {
-        public string rut;
-        public string contraseña;
+        public string rut{ get; set; } 
+        public string contraseña { get; set; }
 
         public Usuario(string Rut, string Contraseña)
         {
-            rut = Rut;
-            contraseña = Contraseña;
         }
 
         public bool verificarRut(string Rut)

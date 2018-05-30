@@ -19,38 +19,34 @@ namespace Proyecto
         public Banco(string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Nombre, Contraseña, Dinero)
         {
         }
-        public bool NroDeCuenta(string nroCuenta, Banco Cl)
+        public bool NroDeCuenta(string nroCuenta1, string rut1)
         {
-            if (nroCuenta == Cl.NroCuenta && rut == Cl.rut)
+            if (nroCuenta1 == NroCuenta && rut1 == rut)
             {
-                return true;
-            }
-
-            if (NroCuenta == Cl.NroCuenta && rut == Cl.rut) {
                 return true;
             }
             return false;
         }
-        public bool PagoConDebito(string NroDeTarjetaDebito, string contraseña, float monto, Banco Cl)
+        public bool PagoConDebito(string NroDeTarjetaDebito1, string contraseña1, float monto, string rut1)
         {
-            if (NroDeTarjetaDebito == Cl.NroTarjetaDebito && contraseña== Cl.contraseña)
+            if (NroDeTarjetaDebito1 == NroTarjetaDebito && contraseña1== contraseña && rut1 ==rut )
             {
-                if (Cl.Debito >= monto)
+                if (Debito >= monto)
                 {
-                    Cl.Debito -= monto;
+                    Debito -= monto;
                     return true;
                 }
                 return false;
             }
             return false;
         }
-        public bool PagoConCredito(string NroDeTarjetaCredito, string contraseña, float monto, Banco Cl)
+        public bool PagoConCredito(string NroDeTarjetaCredito1, string contraseña1, float monto, string rut1)
         {
-            if (NroDeTarjetaCredito == Cl.NroTarjetaCredito && contraseña == Cl.contraseña)
+            if (NroDeTarjetaCredito1 == NroTarjetaCredito && contraseña1 == contraseña && rut1==rut)
             {
-                if (Cl.Credito >= monto)
+                if (Credito >= monto)
                 {
-                    Cl.Credito -= monto;
+                    Credito -= monto;
                     return true;
                 }
                 return false;
