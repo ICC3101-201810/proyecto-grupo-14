@@ -31,11 +31,12 @@ namespace Proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int i = 0;
             foreach (Local la in Listas.locales)
             {
                 if (la.Nombre == textBox1.Text)
                 {
+                    i++;
                     textBox2.Enabled = true;
                     label2.Enabled = true;
                     textBox3.Enabled = true;
@@ -52,24 +53,6 @@ namespace Proyecto
 
 
                 }
-                else
-                {
-                    textBox2.Enabled = false;
-                    label2.Enabled = false;
-                    textBox3.Enabled = false;
-                    label3.Enabled = false;
-                    textBox4.Enabled = false;
-                    label4.Enabled = false;
-                    label5.Enabled = false;
-                    checkBox1.Enabled = false;
-                    checkBox2.Enabled = false;
-                    checkBox3.Enabled = false;
-                    checkBox4.Enabled = false;
-                    checkBox5.Enabled = false;
-                    button2.Enabled = false;
-                    MessageBox.Show("Local no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
 
             }
 
@@ -77,6 +60,7 @@ namespace Proyecto
             {
                 if (laU.Nombre == textBox1.Text)
                 {
+                    i++;
                     textBox2.Enabled = true;
                     label2.Enabled = true;
                     textBox3.Enabled = true;
@@ -91,32 +75,32 @@ namespace Proyecto
                     checkBox5.Enabled = true;
                     button2.Enabled= true;
                 }
-                else
-                {
-                    textBox2.Enabled = false;
-                    label2.Enabled = false;
-                    textBox3.Enabled = false;
-                    label3.Enabled = false;
-                    textBox4.Enabled = false;
-                    label4.Enabled = false;
-                    label5.Enabled = false;
-                    checkBox1.Enabled = false;
-                    checkBox2.Enabled = false;
-                    checkBox3.Enabled = false;
-                    checkBox4.Enabled = false;
-                    checkBox5.Enabled = false;
-                    button2.Enabled =false;
-                    MessageBox.Show("Local no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }
+
+            }
+            if (i==0)
+            {
+                textBox2.Enabled = false;
+                label2.Enabled = false;
+                textBox3.Enabled = false;
+                label3.Enabled = false;
+                textBox4.Enabled = false;
+                label4.Enabled = false;
+                label5.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
+                checkBox5.Enabled = false;
+                button2.Enabled = false;
+                MessageBox.Show("Local no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
-            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Local locla = new Local(textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked);
             if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
             {
                 MessageBox.Show("Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,23 +113,39 @@ namespace Proyecto
 
             else
             {
-                if (textBox3.Text == "Monseñor...")
+                foreach (Local local in Listas.locales)
                 {
-                    Local local = new Local(textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked);
-                    Listas.localesU.Add(local);
-                    local.Eliminar(local, textBox1.Text);
-                    MessageBox.Show("Local Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
+                    if (local.Nombre == textBox1.Text)
+                    {
+                        local.Nombre = textBox2.Text;
+                        local.Direccion = textBox3.Text;
+                        local.RutAdmin = textBox4.Text;
+                        local.Despacho = checkBox1.Checked;
+                        local.Efectivo = checkBox2.Checked;
+                        local.Credito = checkBox3.Checked;
+                        local.Debito = checkBox4.Checked;
+                        local.Cheque = checkBox5.Checked;
+                        MessageBox.Show("Local Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
 
+                    }
                 }
-                else
+                foreach (Local local in Listas.localesU)
                 {
-                    Local local = new Local(textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked);
-                    Listas.locales.Add(local);
-                    local.Eliminar(local, textBox1.Text);
-                    MessageBox.Show("Local Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
+                    if (local.Nombre == textBox1.Text)
+                    {
+                        local.Nombre = textBox2.Text;
+                        local.Direccion = textBox3.Text;
+                        local.RutAdmin = textBox4.Text;
+                        local.Despacho = checkBox1.Checked;
+                        local.Efectivo = checkBox2.Checked;
+                        local.Credito = checkBox3.Checked;
+                        local.Debito = checkBox4.Checked;
+                        local.Cheque = checkBox5.Checked;
+                        MessageBox.Show("Local Editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
 
+                    }
                 }
             }
         }

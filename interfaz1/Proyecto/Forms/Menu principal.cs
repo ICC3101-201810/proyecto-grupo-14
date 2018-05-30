@@ -40,17 +40,15 @@ namespace Proyecto
             {
                 Listas.localesU.Add(l);
             }
-
+            
         }
-
-
         private void Salir_Click(object sender, EventArgs e)
         {
             Listas.SerializarP(Listas.padres);
             Listas.SerializarA(Listas.administradores);
             Listas.SerializarC(Listas.clientes);
             Listas.SerializarL(Listas.locales);
-            Listas.SerializarL(Listas.locales);
+            Listas.SerializarLU(Listas.localesU);
             Application.Exit();
         }
 
@@ -98,6 +96,8 @@ namespace Proyecto
             {
                 MessageBox.Show("Usuario no encontrado","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
         private void Registrar_Click(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace Proyecto
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -35,7 +35,6 @@ namespace Proyecto
             {
                 MessageBox.Show("Local eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-
             }
 
         }   
