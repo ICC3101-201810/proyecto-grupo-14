@@ -99,5 +99,10 @@ namespace Proyecto
             parentWindow.Show();
             base.OnClosed(e);
         }
+
+        private void Administrador1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

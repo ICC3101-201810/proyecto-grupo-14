@@ -12,12 +12,21 @@ namespace Proyecto.Forms
 {
     public partial class Webpay : Form
     {
-        public Webpay()
+        Banco current;
+        Usuario currentU;
+        Forms.Metodo_de_pago parentWindow;
+        public Webpay(Banco a, Forms.Metodo_de_pago parentWindow)
         {
+
+            this.parentWindow = parentWindow;
+            this.current = a;
+            this.currentU = (Usuario)current;
             InitializeComponent();
+            this.CenterToScreen();
+            this.Text = "Webpay tarjeta de debito";
         }
-        Banco cl;
         float monto;
+        currentU.
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -27,7 +36,7 @@ namespace Proyecto.Forms
         {
             string a = textBox1.Text;
             string b = textBox2.Text;
-            cl.PagoConDebito(a,b,monto,cl)
+            current.PagoConDebito(a, b, monto, current);
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

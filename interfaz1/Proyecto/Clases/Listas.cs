@@ -29,7 +29,7 @@ namespace Proyecto
         }
         public static List<Padre> DeserializarP(string pArchivo)
         {
-            if (File.Exists(@"..\..\docs\" + pArchivo) == true )
+            if (File.Exists(@"..\..\docs\" + pArchivo) == true)
             {
                 FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
                 BinaryFormatter _formatter = new BinaryFormatter();
@@ -79,7 +79,7 @@ namespace Proyecto
             }
             return new List<Cliente>();
         }
-        
+
         public static void SerializarLU(List<Local> plistaPersona)
         {
             FileStream _fs = new FileStream(@"..\..\docs\localu.dat", FileMode.Create);
@@ -115,8 +115,27 @@ namespace Proyecto
                 List<Local> _persona = _formatter.Deserialize(_fs) as List<Local>;
                 _fs.Close();
                 return _persona;
-            } 
+            }
             return new List<Local>();
         }
-    }
+        public static void SerializarL(List<Banco> plistaPersona)
+            {
+                FileStream _fs = new FileStream(@"..\..\docs\banco.dat", FileMode.Create);
+                BinaryFormatter _formatter = new BinaryFormatter();
+                _formatter.Serialize(_fs, plistaPersona);
+                _fs.Close();
+            }
+        public static List<Banco> DeserializarB(string pArchivo)
+            {
+                if (File.Exists(@"..\..\docs\" + pArchivo) == true)
+                {
+                    FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
+                    BinaryFormatter _formatter = new BinaryFormatter();
+                    List<Banco> _persona = _formatter.Deserialize(_fs) as List<Banco>;
+                    _fs.Close();
+                    return _persona;
+                }
+                return new List<Banco>();
+            }
+        } 
 }
