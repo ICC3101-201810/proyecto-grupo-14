@@ -17,6 +17,8 @@ namespace Proyecto
         {
             this.current = a;
             InitializeComponent();
+            this.CenterToScreen();
+            this.Text = "Editar Producto";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,11 +39,12 @@ namespace Proyecto
                             checkBox2.Enabled = true;
                             checkBox3.Enabled = true;
                             checkBox4.Enabled = true;
+                            button2.Enabled = true;
                         }
                     }
                 }
             }
-            foreach (Local local in Listas.locales)
+            foreach (Local local in Listas.localesU)
             {
                 if (local.RutAdmin == current.rut)
                 {
@@ -56,6 +59,7 @@ namespace Proyecto
                             checkBox2.Enabled = true;
                             checkBox3.Enabled = true;
                             checkBox4.Enabled = true;
+                            button2.Enabled = true;
                         }
                     }
                 }
@@ -67,6 +71,14 @@ namespace Proyecto
                 checkBox2.Enabled = false;
                 checkBox3.Enabled = false;
                 checkBox4.Enabled = false;
+                button2.Enabled = false;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                MessageBox.Show("No se ha encontrado el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
         }
@@ -129,7 +141,70 @@ namespace Proyecto
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            foreach (Local local in Listas.locales)
+            {
+                if (local.RutAdmin == current.rut)
+                {
+                    List<Producto> productos = local.GetProductos();
+                    foreach (Producto producto in productos)
+                    {
+                        if (producto.Nombre == textBox1.Text)
+                        {
+                            if (checkBox1.Checked == true)
+                            {
+                                producto.Nombre = textBox2.Text;
+                            }
+                            if (checkBox2.Checked == true)
+                            {
+                                producto.Marca = textBox3.Text;
+                            }
+                            if (checkBox3.Checked == true)
+                            {
+                                int precio = Int32.Parse(textBox4.Text);
+                                producto.Precio = precio;
+                            }
+                            if (checkBox4.Checked == true)
+                            {
+                                int stock = Int32.Parse(textBox5.Text);
+                                producto.Stock = stock;
+                            }
+                        }
+                    }
+                }
+            }
+            foreach (Local local in Listas.localesU)
+            {
+                if (local.RutAdmin == current.rut)
+                {
+                    List<Producto> productos = local.GetProductos();
+                    foreach (Producto producto in productos)
+                    {
+                        if (producto.Nombre == textBox1.Text)
+                        {
+                            if (checkBox1.Checked == true)
+                            {
+                                producto.Nombre = textBox2.Text;
+                            }
+                            if (checkBox2.Checked == true)
+                            {
+                                producto.Marca = textBox3.Text;
+                            }
+                            if (checkBox3.Checked == true)
+                            {
+                                int precio = Int32.Parse(textBox4.Text);
+                                producto.Precio = precio;
+                            }
+                            if (checkBox4.Checked == true)
+                            {
+                                int stock = Int32.Parse(textBox5.Text);
+                                producto.Stock = stock;
+                            }
+                        }
+                    }
+                }
+            }
+            MessageBox.Show("Producto editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
         }
     }
 }
