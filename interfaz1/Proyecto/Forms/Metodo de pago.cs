@@ -12,22 +12,30 @@ namespace Proyecto.Forms
 {
     public partial class Metodo_de_pago : Form
     {
-        public Metodo_de_pago()
+        Compralu ParentWindow;
+        OrdenCompra CurrentO;
+        Cliente Current;
+        Banco CurrentC;
+        public Metodo_de_pago(Cliente c, Banco d, OrdenCompra a, Compralu parentWindow)
         {
+            this.Current = c;
+            this.ParentWindow = parentWindow;
+            this.CurrentO = a;
+            this.CurrentC = d;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Webpay menu = new Webpay();
+            Webpay menu = new Webpay(CurrentC, CurrentO, this);
             menu.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            WebpayC menu = new WebpayC();
+            WebpayC menu = new WebpayC(CurrentC, CurrentO, this);
             menu.Show();
         }
 
@@ -40,6 +48,11 @@ namespace Proyecto.Forms
         {
             this.Close();
             Parent.Show();
+        }
+
+        private void Metodo_de_pago_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

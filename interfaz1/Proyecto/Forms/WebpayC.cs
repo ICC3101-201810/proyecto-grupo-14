@@ -12,14 +12,23 @@ namespace Proyecto.Forms
 {
     public partial class WebpayC : Form
     {
-        public WebpayC()
+
+        Banco current;
+        OrdenCompra currentc;
+        Usuario currentU;
+        Metodo_de_pago parentWindow;
+        public WebpayC(Banco a, OrdenCompra b, Metodo_de_pago parentWindow)
         {
+
+            this.parentWindow = parentWindow;
+            this.current = a;
+            this.currentc = b;
+            this.currentU = (Usuario)current;
             InitializeComponent();
+            this.CenterToScreen();
+            this.Text = "Webpay tarjeta de debito";
         }
-        //rut cliente
-        float monto;
-        Banco cl;
-        
+
         private void WebpayC_Load(object sender, EventArgs e)
         {
 
@@ -35,7 +44,7 @@ namespace Proyecto.Forms
         {
             string a = textBox1.Text;
             string b = textBox2.Text;
-            cl.PagoConCredito(a, b, monto, cl);
+            current.PagoConCredito(a, b, currentc.VerMonto(), currentU.rut);
         }
     }
 }

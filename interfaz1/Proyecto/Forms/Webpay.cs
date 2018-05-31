@@ -15,8 +15,8 @@ namespace Proyecto.Forms
         Banco current;
         OrdenCompra currentc;
         Usuario currentU;
-        Compralu parentWindow;
-        public Webpay(Banco a, OrdenCompra b, Compralu parentWindow)
+        Metodo_de_pago parentWindow;
+        public Webpay(Banco a, OrdenCompra b, Metodo_de_pago parentWindow)
         {
 
             this.parentWindow = parentWindow;
@@ -27,7 +27,6 @@ namespace Proyecto.Forms
             this.CenterToScreen();
             this.Text = "Webpay tarjeta de debito";
         }
-        float monto=0;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -38,7 +37,7 @@ namespace Proyecto.Forms
         {
             string a = textBox1.Text;
             string b = textBox2.Text;
-            current.PagoConDebito(a, b, monto, current.rut);
+            current.PagoConDebito(a, b, currentc.VerMonto(), current.rut);
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

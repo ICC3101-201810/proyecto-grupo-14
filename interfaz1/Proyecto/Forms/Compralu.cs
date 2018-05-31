@@ -15,10 +15,12 @@ namespace Proyecto
         Cliente current;
         OrdenCompra currentc;
         Usuario currentU;
+        Banco currentb;
         Form1 parentWindow;
-        public Compralu(Cliente a,OrdenCompra b, Form1 parentWindow)
+        public Compralu(Cliente a, OrdenCompra b, Banco c, Form1 parentWindow)
         {
-            this.parentWindow = parentWindow ;
+            this.parentWindow = parentWindow;
+            this.currentb = c;
             this.currentc = b;
             this.current = a;
             this.currentU = (Usuario)current;
@@ -113,11 +115,16 @@ namespace Proyecto
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago();
+            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(current, currentb, currentc, this);
             mt.Show();
         }
 
         private void Compralu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Compralu_Load_1(object sender, EventArgs e)
         {
 
         }

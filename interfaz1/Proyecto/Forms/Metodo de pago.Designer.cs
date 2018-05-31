@@ -85,6 +85,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Metodo_de_pago";
             this.Text = "Metodo_de_pago";
+            this.Load += new System.EventHandler(this.Metodo_de_pago_Load);
             this.ResumeLayout(false);
 
         }

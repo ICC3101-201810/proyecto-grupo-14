@@ -198,6 +198,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Compralu";
             this.Text = "Compralu";
+            this.Load += new System.EventHandler(this.Compralu_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
