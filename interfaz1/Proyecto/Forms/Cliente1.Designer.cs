@@ -52,6 +52,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(423, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // comprarToolStripMenuItem
             // 
@@ -61,17 +62,18 @@
             this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
             this.comprarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.comprarToolStripMenuItem.Text = "Comprar";
+            this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
             // 
             // localesUniversidadToolStripMenuItem
             // 
             this.localesUniversidadToolStripMenuItem.Name = "localesUniversidadToolStripMenuItem";
-            this.localesUniversidadToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.localesUniversidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.localesUniversidadToolStripMenuItem.Text = "Locales Universidad";
             // 
             // localesToolStripMenuItem
             // 
             this.localesToolStripMenuItem.Name = "localesToolStripMenuItem";
-            this.localesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.localesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.localesToolStripMenuItem.Text = "Locales";
             // 
             // efectivoToolStripMenuItem

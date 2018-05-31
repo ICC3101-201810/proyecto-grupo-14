@@ -56,6 +56,7 @@ namespace Proyecto
             Listas.SerializarB(Listas.Cuentas);
             Application.Exit();
         }
+        Banco CuentaCliente;
 
         private void Ingresar_Click(object sender, EventArgs e)
         {
@@ -67,7 +68,14 @@ namespace Proyecto
                 {
                     o++;
                     this.Hide();
-                    Cliente1 cliente = new Cliente1();
+                    foreach(Banco r in Listas.Cuentas)
+                    {
+                        if (c.rut == r.rut)
+                        {
+                            CuentaCliente = r;
+                        }
+                    }
+                    Cliente1 cliente = new Cliente1(CuentaCliente,this);
                     cliente.Show();
                     break;
 

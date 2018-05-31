@@ -26,7 +26,7 @@ namespace Proyecto
             this.currentU = (Usuario)current;
             InitializeComponent();
             this.CenterToScreen();
-            this.Text = "Webpay tarjeta de debito";
+            this.Text = "Compralu";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -108,8 +108,7 @@ namespace Proyecto
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Cliente1 c = new Cliente1();
-            c.Show();
+            Parent.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)

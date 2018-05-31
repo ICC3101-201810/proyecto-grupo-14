@@ -12,8 +12,12 @@ namespace Proyecto
 {
     public partial class Cliente1 : Form
     {
-        public Cliente1()
+        Banco CuentaUsuario;
+        Form1 ParentWindow;
+        public Cliente1(Banco d , Form1 parentWindow)
         {
+            this.CuentaUsuario = d;
+            this.ParentWindow = parentWindow;
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Cliente";
@@ -21,15 +25,24 @@ namespace Proyecto
 
         private void cerrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 menu = new Form1();
-            menu.Show();
+            this.Close();
+            Parent.Show();
         }
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Contraseña contraseña = new Contraseña();
             contraseña.Show();
+        }
+
+        private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

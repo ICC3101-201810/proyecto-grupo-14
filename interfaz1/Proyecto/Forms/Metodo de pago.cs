@@ -19,7 +19,7 @@ namespace Proyecto.Forms
         public Metodo_de_pago(Cliente c, Banco d, OrdenCompra a, Compralu parentWindow)
         {
             this.Current = c;
-            this.ParentWindow = parentWindow;
+            this.ParentWindow = (Compralu)parentWindow;
             this.CurrentO = a;
             this.CurrentC = d;
             InitializeComponent();

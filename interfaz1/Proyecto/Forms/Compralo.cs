@@ -12,9 +12,21 @@ namespace Proyecto
 {
     public partial class Compralo : Form
     {
-        public Compralo()
+        Cliente current;
+        OrdenCompra currentc;
+        Usuario currentU;
+        Banco currentb;
+        Form1 parentWindow;
+        public Compralo(Cliente a, OrdenCompra b, Banco c, Form1 parentWindow)
         {
+            this.parentWindow = parentWindow;
+            this.currentb = c;
+            this.currentc = b;
+            this.current = a;
+            this.currentU = (Usuario)current;
             InitializeComponent();
+            this.CenterToScreen();
+            this.Text = "Compralo";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,8 +81,7 @@ namespace Proyecto
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Cliente1 c = new Cliente1();
-            c.Show();
+            Parent.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -101,9 +112,9 @@ namespace Proyecto
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago();
-            mt.Show();
+            //this.Hide();
+            //Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(current,currentb,currentc,this);
+            //mt.Show();
         }
 
         private void Compralo_Load(object sender, EventArgs e)
