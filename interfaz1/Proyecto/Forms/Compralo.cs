@@ -12,16 +12,17 @@ namespace Proyecto
 {
     public partial class Compralo : Form
     {
+        Local currentL;
         Cliente current;
-        OrdenCompra currentc;
         Usuario currentU;
         Banco currentb;
-        Form1 parentWindow;
-        public Compralo(Cliente a, OrdenCompra b, Banco c, Form1 parentWindow)
+        LocalesU parentWindow;
+        float total;
+        public Compralo(Local l, Cliente a, Banco c, LocalesU parentWindow)
         {
+            this.currentL = l;
             this.parentWindow = parentWindow;
             this.currentb = c;
-            this.currentc = b;
             this.current = a;
             this.currentU = (Usuario)current;
             InitializeComponent();
@@ -31,50 +32,20 @@ namespace Proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int ar = 0;
-            foreach (Local loca in Listas.localesU)
-            {
-                if (textBox1.Text == loca.RutAdmin)
-                {
-                    ar += 1;
-                    label2.Enabled = true;
-                    textBox2.Enabled = true;
-                    button3.Enabled = true;
-                    button4.Enabled = true;
-                    button5.Enabled = true;
-                    button6.Enabled = true;
-                }
-            }
-            if (ar == 1)
-            {
-                label2.Enabled = false;
-                textBox2.Enabled = false;
-                button3.Enabled = false;
-                button4.Enabled = false;
-                button5.Enabled = false;
-                button6.Enabled = false;
-                MessageBox.Show("Local no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach (Local lq in Listas.localesU)
+            foreach (Producto local in currentL.GetProductos())
             {
-                if (textBox1.Text == lq.RutAdmin)
-                {
-                    listView1.Visible = true;
-                    List<Producto> pq = lq.GetProductos();
-                    foreach (Producto local in pq)
-                    {
-                        ListViewItem item = new ListViewItem();
-                        item = listView1.Items.Add(local.Nombre);
-                        item.SubItems.Add(local.Marca);
-                        item.SubItems.Add(local.Precio.ToString());
-                        item.SubItems.Add(local.Stock.ToString());
+                    ListViewItem item = new ListViewItem();
+                    item = listView1.Items.Add(local.Nombre);
+                    item.SubItems.Add(local.Marca);
+                    item.SubItems.Add(local.Precio.ToString());
+                    item.SubItems.Add(local.Stock.ToString());
+                    total += local.Precio;
+                
 
-                    }
-                }
             }
         }
 
@@ -97,7 +68,7 @@ namespace Proyecto
             }
             else
             {
-                foreach (Local lq in Listas.localesU)
+                foreach (Local lq in Listas.locales)
                 {
                     if (textBox1.Text == lq.RutAdmin)
                     {
@@ -112,14 +83,41 @@ namespace Proyecto
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(current,currentb,currentc,this);
-            //mt.Show();
+            this.Hide();
+            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(current,currentb,total,this);
+            mt.Show();
         }
 
         private void Compralo_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Compralo_Load_1(object sender, EventArgs e)
+        {
+
+        }
+        string nombre;
+        string marca;
+        int cantidad;
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            nombre = maskedTextBox1.Text;
+        }
+
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            marca = maskedTextBox2.Text;
+        }
+
+        private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            cantidad = Int32.Parse(maskedTextBox3.Text);
         }
     }
 }

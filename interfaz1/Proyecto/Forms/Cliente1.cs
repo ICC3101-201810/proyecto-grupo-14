@@ -14,8 +14,10 @@ namespace Proyecto
     {
         Banco CuentaUsuario;
         Form1 ParentWindow;
-        public Cliente1(Banco d , Form1 parentWindow)
+        Cliente current;
+        public Cliente1(Banco d , Cliente c, Form1 parentWindow)
         {
+            this.current = c;
             this.CuentaUsuario = d;
             this.ParentWindow = parentWindow;
             InitializeComponent();
@@ -41,6 +43,18 @@ namespace Proyecto
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void localesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Compralo cm = new Compralo(current,CuentaUsuario,this);
+            cm.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }

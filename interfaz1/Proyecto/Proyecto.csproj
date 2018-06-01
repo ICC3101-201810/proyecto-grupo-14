@@ -59,12 +59,6 @@
     <Compile Include="Forms\Compralo.designer.cs">
       <DependentUpon>Compralo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Compralu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Compralu.designer.cs">
-      <DependentUpon>Compralu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\EditarLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +138,6 @@
     <Compile Include="Forms\Locales.designer.cs">
       <DependentUpon>Locales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LocalesU.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LocalesU.designer.cs">
-      <DependentUpon>LocalesU.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\WebpayC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,9 +155,6 @@
     <Compile Include="Clases\Usuario.cs" />
     <EmbeddedResource Include="Forms\Compralo.resx">
       <DependentUpon>Compralo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Compralu.resx">
-      <DependentUpon>Compralu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditarLocal.resx">
       <DependentUpon>EditarLocal.cs</DependentUpon>
@@ -209,9 +194,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Locales.resx">
       <DependentUpon>Locales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LocalesU.resx">
-      <DependentUpon>LocalesU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpayC.resx">
       <DependentUpon>WebpayC.cs</DependentUpon>

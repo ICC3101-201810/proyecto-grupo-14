@@ -14,16 +14,19 @@ namespace Proyecto.Forms
     {
 
         Banco current;
-        OrdenCompra currentc;
-        Usuario currentU;
+        float currentc;
+        Cliente currentU;
         Metodo_de_pago parentWindow;
-        public WebpayC(Banco a, OrdenCompra b, Metodo_de_pago parentWindow)
+        OrdenCompra CurrentK;
+        Local CurrentL;
+        public WebpayC(OrdenCompra k, Banco a, Cliente rt, float b, Local p, Metodo_de_pago parentWindow)
         {
-
+            this.CurrentL = p;
+            this.CurrentK = k;
             this.parentWindow = parentWindow;
             this.current = a;
             this.currentc = b;
-            this.currentU = (Usuario)current;
+            this.currentU = rt;
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Webpay tarjeta de debito";
@@ -44,7 +47,28 @@ namespace Proyecto.Forms
         {
             string a = textBox1.Text;
             string b = textBox2.Text;
-            current.PagoConCredito(a, b, currentc.VerMonto(), currentU.rut);
+            if (b == current.contraseña)
+            {
+                if (current.Credito >= currentc)
+                {
+                    current.PagoConCredito(a, b, currentc, currentU.rut);
+                    this.Close();
+                    Form1 mn = new Form1();
+                    Cliente1 cl = new Cliente1(current,currentU, mn);
+                    MessageBox.Show("Pago exitoso, retire los productos de la manera acordada preciamente");
+                    CurrentL.agregarOdernCompra(CurrentK);
+                    CurrentL.VenderProductos(CurrentK);
+                    cl.Show();
+                    cl.Show();
+                }
+                else
+                {
+                    MessageBox.Show("no hay saldo suficiente en tu linea de credito, intenta con otro medio de pago o saca algun producto de la lista");
+                    this.Close();
+                    Parent.Show();
+                }
+            }
+                
         }
     }
 }

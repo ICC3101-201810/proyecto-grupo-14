@@ -14,8 +14,10 @@ namespace Proyecto
         public string NroTarjetaCredito { get; set; }
         public float LineaDebito { get; set; }
         public float Debito { get; set; }
+        public string contrasenaDebito { get; set; }
         public float LineaCredito { get; set; }
         public float Credito { get; set; }
+        public string contrasenaCredito { get; set; }
         public Banco(string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Nombre, Contraseña, Dinero)
         {
         }
@@ -29,7 +31,7 @@ namespace Proyecto
         }
         public bool PagoConDebito(string NroDeTarjetaDebito1, string contraseña1, float monto, string rut1)
         {
-            if (NroDeTarjetaDebito1 == NroTarjetaDebito && contraseña1== contraseña && rut1 ==rut )
+            if (NroDeTarjetaDebito1 == NroTarjetaDebito && contraseña1== contrasenaDebito && rut1 ==rut )
             {
                 if (Debito >= monto)
                 {
@@ -42,7 +44,7 @@ namespace Proyecto
         }
         public bool PagoConCredito(string NroDeTarjetaCredito1, string contraseña1, float monto, string rut1)
         {
-            if (NroDeTarjetaCredito1 == NroTarjetaCredito && contraseña1 == contraseña && rut1==rut)
+            if (NroDeTarjetaCredito1 == NroTarjetaCredito && contraseña1 == contrasenaCredito && rut1==rut)
             {
                 if (Credito >= monto)
                 {

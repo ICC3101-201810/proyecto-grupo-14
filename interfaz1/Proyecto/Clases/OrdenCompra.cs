@@ -9,15 +9,12 @@ namespace Proyecto
     [Serializable()]
     public class OrdenCompra
     {
-        Cliente cliente;
-        List<Producto> productos = new List<Producto>();
-        Local local;
+        public Cliente cliente { get; set; }
+        public List<Producto> productos { get; set; }
+        public Local local { get; set; }
         int id { get; set; }
         public OrdenCompra(Cliente Cliente, List<Producto> Productos, Local Local)
         {
-            cliente = Cliente;
-            productos = Productos;
-            local = Local;
         }
         public bool verificarCompra(Cliente cliente, List<Producto> productos)
         {

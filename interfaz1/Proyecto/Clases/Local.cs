@@ -9,7 +9,7 @@ namespace Proyecto
     [Serializable()]
     public class Local
     {
-        List<Producto> productos = new List<Producto>();
+        List<Producto> productos { get; set; }
         List<OrdenCompra> ordenCompras = new List<OrdenCompra>();
         private string nombre;
         private string direccion;
@@ -20,25 +20,18 @@ namespace Proyecto
         private bool cheque;
         private string rutAdmin;
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Direccion { get => direccion; set => direccion = value; }
-        public bool Despacho { get => despacho; set => despacho = value; }
-        public bool Efectivo { get => efectivo; set => efectivo = value; }
-        public bool Debito { get => debito; set => debito = value; }
-        public bool Credito { get => credito; set => credito = value; }
-        public bool Cheque { get => cheque; set => cheque = value; }
-        public string RutAdmin { get => rutAdmin; set => rutAdmin = value; }
+        public string Nombre { get; set; }
+        public string Direccion { get; set; }
+        public bool Despacho { get; set; }
+        public bool Efectivo { get; set; }
+        public bool Debito { get; set; }
+        public bool Credito { get; set; }
+        public bool Cheque { get; set; }
+        public string RutAdmin { get; set; }
+        public string ubicacion { get; set; }
 
-        public Local(string Nombre, string Direccion, string RutAdmin, bool Despacho, bool Efectivo, bool Debito, bool Credito, bool Cheque)
+        public Local(string Nombre, string Direccion, string RutAdmin, bool Despacho, bool Efectivo, bool Debito, bool Credito, bool Cheque,string ubicacion)
         {
-            nombre = Nombre;
-            direccion = Direccion;
-            rutAdmin = RutAdmin;
-            despacho = Despacho;
-            efectivo = Efectivo;
-            debito = Debito;
-            credito = Credito;
-            cheque = Cheque;
         }
         public bool validarRutAdmin(string rut)
         {
@@ -128,22 +121,19 @@ namespace Proyecto
                 }
             }
 
-            foreach (Local lcU in Listas.localesU)
-            {
-                
-                
-                if (lcU.Nombre == a)
-                {
-                    Listas.localesU.Remove(lcU);
-                    return true;
-                    
-
-                }
-            }
             
             return false;
 
             
+        }
+        public void VenderProductos(OrdenCompra r)
+        {foreach(Producto o in productos)
+            foreach (Producto c in r.productos) {
+                if (o.Marca == c.Marca && o.Nombre == c.Nombre)
+                {
+                    o.Stock -= c.Stock;
+                }
+            }
         }
 
         

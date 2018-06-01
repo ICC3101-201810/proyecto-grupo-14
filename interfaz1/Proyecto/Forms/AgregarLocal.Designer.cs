@@ -172,6 +172,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AgregarLocal";
             this.Text = "AgregarLocal";
+            this.Load += new System.EventHandler(this.AgregarLocal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

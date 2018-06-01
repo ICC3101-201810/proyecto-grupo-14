@@ -31,13 +31,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localesUniversidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.efectivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verSaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarDineroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrar = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +57,7 @@
             // comprarToolStripMenuItem
             // 
             this.comprarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.localesUniversidadToolStripMenuItem,
-            this.localesToolStripMenuItem});
+            this.localesUniversidadToolStripMenuItem});
             this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
             this.comprarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.comprarToolStripMenuItem.Text = "Comprar";
@@ -66,15 +65,12 @@
             // 
             // localesUniversidadToolStripMenuItem
             // 
+            this.localesUniversidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
             this.localesUniversidadToolStripMenuItem.Name = "localesUniversidadToolStripMenuItem";
             this.localesUniversidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.localesUniversidadToolStripMenuItem.Text = "Locales Universidad";
-            // 
-            // localesToolStripMenuItem
-            // 
-            this.localesToolStripMenuItem.Name = "localesToolStripMenuItem";
-            this.localesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.localesToolStripMenuItem.Text = "Locales";
+            this.localesUniversidadToolStripMenuItem.Text = "Locales ";
+            this.localesUniversidadToolStripMenuItem.Click += new System.EventHandler(this.localesToolStripMenuItem_Click);
             // 
             // efectivoToolStripMenuItem
             // 
@@ -122,6 +118,13 @@
             this.cerrar.UseVisualStyleBackColor = true;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // Cliente1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,12 +147,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localesUniversidadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem localesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem efectivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verSaldoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarDineroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
         private System.Windows.Forms.Button cerrar;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

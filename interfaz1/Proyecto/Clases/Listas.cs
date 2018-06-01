@@ -15,7 +15,6 @@ namespace Proyecto
         public static List<Cliente> clientes = new List<Cliente>();
         public static List<Administrador> administradores = new List<Administrador>();
         public static List<Local> locales = new List<Local>();
-        public static List<Local> localesU = new List<Local>();
         public static List<OrdenCompra> OrdenesCompras = new List<OrdenCompra>();
         public static List<Banco> Cuentas = new List<Banco>();
 
@@ -80,25 +79,6 @@ namespace Proyecto
             return new List<Cliente>();
         }
 
-        public static void SerializarLU(List<Local> plistaPersona)
-        {
-            FileStream _fs = new FileStream(@"..\..\docs\localu.dat", FileMode.Create);
-            BinaryFormatter _formatter = new BinaryFormatter();
-            _formatter.Serialize(_fs, plistaPersona);
-            _fs.Close();
-        }
-        public static List<Local> DeserializarLU(string pArchivo)
-        {
-            if (File.Exists(@"..\..\docs\" + pArchivo) == true)
-            {
-                FileStream _fs = new FileStream(@"..\..\docs\" + pArchivo, FileMode.Open);
-                BinaryFormatter _formatter = new BinaryFormatter();
-                List<Local> _persona = _formatter.Deserialize(_fs) as List<Local>;
-                _fs.Close();
-                return _persona;
-            }
-            return new List<Local>();
-        }
         public static void SerializarL(List<Local> plistaPersona)
         {
             FileStream _fs = new FileStream(@"..\..\docs\local.dat", FileMode.Create);

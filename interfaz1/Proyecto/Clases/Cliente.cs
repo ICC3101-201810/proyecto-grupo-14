@@ -9,9 +9,9 @@ namespace Proyecto
     [Serializable()]
     public class Cliente : Usuario
     {
-        public int dinero { get; set; }
+        public float dinero { get; set; }
         public string nombre { get; set; }
-        public Cliente(string Rut, string Nombre, string Contraseña, int Dinero) : base(Rut, Contraseña)
+        public Cliente(string Rut, string Nombre, string Contraseña, float Dinero) : base(Rut, Contraseña)
         {
         }
         public bool verificarCliente(Usuario usuario, Cliente cliente)
