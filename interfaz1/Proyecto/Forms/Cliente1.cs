@@ -65,6 +65,32 @@ namespace Proyecto
 
         private void verSaldoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label3.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
+            label1.Visible = true;
+            string dinero = Convert.ToString(current.Dinero);
+            label2.Text = dinero;
+            label2.Visible = true;
+        }
+
+        private void agregarDineroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            label2.Visible = false;
+            label1.Visible = false;
+            label3.Visible = true;
+            textBox1.Visible = true;
+            button1.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int dinero = Int32.Parse(textBox1.Text);
+            current.Dinero += dinero;
+            label3.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
         }
     }
 }

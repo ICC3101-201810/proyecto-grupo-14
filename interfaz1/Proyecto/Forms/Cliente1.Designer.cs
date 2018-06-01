@@ -39,6 +39,9 @@
             this.cerrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +95,7 @@
             this.agregarDineroToolStripMenuItem.Name = "agregarDineroToolStripMenuItem";
             this.agregarDineroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarDineroToolStripMenuItem.Text = "Agregar Dinero";
+            this.agregarDineroToolStripMenuItem.Click += new System.EventHandler(this.agregarDineroToolStripMenuItem_Click);
             // 
             // cuentaToolStripMenuItem
             // 
@@ -138,11 +142,43 @@
             this.label2.Text = "label2";
             this.label2.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Agregar dinero:";
+            this.label3.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(124, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(231, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Cliente1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 185);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cerrar);
@@ -170,5 +206,8 @@
         private System.Windows.Forms.Button cerrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
