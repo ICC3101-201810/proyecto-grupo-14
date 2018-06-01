@@ -65,10 +65,6 @@ namespace Proyecto
 
         private void verSaldoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            string dinero =;
-            label2.Text = current.Dinero;
-            label2.Visible = true;
         }
     }
 }

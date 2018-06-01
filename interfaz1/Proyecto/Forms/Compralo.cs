@@ -50,7 +50,7 @@ namespace Proyecto
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Parent.Show();
+            parentWindow.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -71,6 +71,17 @@ namespace Proyecto
             seleccion.Nombre = nombre;
             seleccion.Stock = cantidad;
             O.Productos.Add(seleccion);
+
+            foreach (Producto p in O.Productos)
+            {
+                ListViewItem item = new ListViewItem();
+                item = listView2.Items.Add(p.Nombre);
+                item.SubItems.Add(p.Marca);
+                item.SubItems.Add(p.Precio.ToString());
+
+
+
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -108,6 +119,16 @@ namespace Proyecto
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
