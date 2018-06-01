@@ -17,7 +17,6 @@ namespace Proyecto
         Usuario currentU;
         Banco currentb;
         LocalesU parentWindow;
-        float total;
         public Compralo(Local l, Cliente a, Banco c, LocalesU parentWindow)
         {
             this.currentL = l;
@@ -43,7 +42,6 @@ namespace Proyecto
                     item.SubItems.Add(local.Marca);
                     item.SubItems.Add(local.Precio.ToString());
                     item.SubItems.Add(local.Stock.ToString());
-                    total += local.Precio;
                 
 
             }
@@ -59,32 +57,26 @@ namespace Proyecto
         {
             MessageBox.Show("Como no  pudimos agregar a la lista OrdenCompra no se puede desplegar");
         }
-
+        OrdenCompra O;
+        string nombre;
+        string marca;
+        int cantidad;
+        Producto seleccion;
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
-            {
-                MessageBox.Show("Ingrese nombre de un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                foreach (Local lq in Listas.locales)
-                {
-                    if (textBox1.Text == lq.RutAdmin)
-                    {
-
-                        List<Producto> pq = lq.GetProductos();
-                        MessageBox.Show("No pudimos agregar a la lista OrdenCompra");
-
-                    }
-                }
-            }
+            marca = maskedTextBox2.Text;
+            nombre = maskedTextBox1.Text;
+            cantidad = Int32.Parse(maskedTextBox3.Text);
+            seleccion.Marca = marca;
+            seleccion.Nombre = nombre;
+            seleccion.Stock = cantidad;
+            O.productos.Add(seleccion);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(current,currentb,total,this);
+            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(currentL, current,currentb,O,this);
             mt.Show();
         }
 
@@ -97,9 +89,7 @@ namespace Proyecto
         {
 
         }
-        string nombre;
-        string marca;
-        int cantidad;
+        
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -107,17 +97,17 @@ namespace Proyecto
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            nombre = maskedTextBox1.Text;
+            
         }
 
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            marca = maskedTextBox2.Text;
+            
         }
 
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            cantidad = Int32.Parse(maskedTextBox3.Text);
+            
         }
     }
 }

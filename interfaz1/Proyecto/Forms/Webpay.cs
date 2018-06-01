@@ -13,18 +13,16 @@ namespace Proyecto.Forms
     public partial class Webpay : Form
     {
         Banco current;
-        float currentc;
         Cliente currentU;
         Metodo_de_pago parentWindow;
         OrdenCompra CurrentK;
         Local CurrentL;
-        public Webpay(OrdenCompra k, Banco a, Cliente rt,float b,Local p, Metodo_de_pago parentWindow)
+        public Webpay(OrdenCompra k, Banco a, Cliente rt,Local p, Metodo_de_pago parentWindow)
         {
             this.CurrentL = p;
             this.CurrentK = k;
             this.parentWindow = parentWindow;
             this.current = a;
-            this.currentc = b;
             this.currentU = rt;
             InitializeComponent();
             this.CenterToScreen();
@@ -42,9 +40,9 @@ namespace Proyecto.Forms
             string b = textBox2.Text;
             if (b == current.contraseña)
             {
-                if (current.Debito >= currentc)
+                if (current.Debito >= CurrentK.VerMonto())
                 {
-                    current.PagoConDebito(a, b, currentc, current.rut);
+                    current.PagoConDebito(a, b, CurrentK.VerMonto(), current.rut);
                     this.Close();
                     Form1 mn = new Form1();
                     Cliente1 cl = new Cliente1(current, currentU, mn);

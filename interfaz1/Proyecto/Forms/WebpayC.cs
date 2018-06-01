@@ -14,18 +14,16 @@ namespace Proyecto.Forms
     {
 
         Banco current;
-        float currentc;
         Cliente currentU;
         Metodo_de_pago parentWindow;
         OrdenCompra CurrentK;
         Local CurrentL;
-        public WebpayC(OrdenCompra k, Banco a, Cliente rt, float b, Local p, Metodo_de_pago parentWindow)
+        public WebpayC(OrdenCompra k, Banco a, Cliente rt, Local p, Metodo_de_pago parentWindow)
         {
             this.CurrentL = p;
             this.CurrentK = k;
             this.parentWindow = parentWindow;
             this.current = a;
-            this.currentc = b;
             this.currentU = rt;
             InitializeComponent();
             this.CenterToScreen();
@@ -49,9 +47,9 @@ namespace Proyecto.Forms
             string b = textBox2.Text;
             if (b == current.contraseña)
             {
-                if (current.Credito >= currentc)
+                if (current.Credito >= CurrentK.VerMonto())
                 {
-                    current.PagoConCredito(a, b, currentc, currentU.rut);
+                    current.PagoConCredito(a, b, CurrentK.VerMonto(), currentU.rut);
                     this.Close();
                     Form1 mn = new Form1();
                     Cliente1 cl = new Cliente1(current,currentU, mn);

@@ -13,11 +13,13 @@ namespace Proyecto.Forms
     public partial class Metodo_de_pago : Form
     {
         Compralo ParentWindow;
-        float CurrentO;
+        OrdenCompra CurrentO;
         Cliente Current;
         Banco CurrentC;
-        public Metodo_de_pago(Cliente c, Banco d, float a, Compralo parentWindow)
+        Local CurrentL;
+        public Metodo_de_pago(Local l,Cliente c, Banco d, OrdenCompra a, Compralo parentWindow)
         {
+            this.CurrentL = l;
             this.Current = c;
             this.ParentWindow = parentWindow;
             this.CurrentO = a;
@@ -28,26 +30,27 @@ namespace Proyecto.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Webpay menu = new Webpay(CurrentC, CurrentO, this);
+            Webpay menu = new Webpay(CurrentO,CurrentC, Current,CurrentL, this);
             menu.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            WebpayC menu = new WebpayC(CurrentC, CurrentO, this);
+            WebpayC menu = new WebpayC(CurrentO, CurrentC, Current, CurrentL, this);
             menu.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Current.dinero <= CurrentO)
+            if (Current.dinero <= CurrentO.VerMonto())
             {
                 MessageBox.Show("no posees el efectivo suficiente, selecciona otra opcion de pago o elimina algo de la cuenta volviendo atras");
             }
             else
             {
-                Current.dinero -= CurrentO;
+                Current.dinero -= CurrentO.VerMonto();
+                CurrentL.agregarOdernCompra(CurrentO);
                 MessageBox.Show("tienes el efectivo suficiente, recuerda no gastarlo antes de llegar a la tienda");
                 this.Close();
                 Form1 menu = new Form1();
