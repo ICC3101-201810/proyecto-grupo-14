@@ -37,19 +37,6 @@ namespace Proyecto
                     this.Hide();
                 }
             }
-            foreach (Local local in Listas.locales)
-            {
-                if (local.RutAdmin == current.Rut)
-                {
-                    i++;
-                    int precio = Int32.Parse(textBox3.Text);
-                    int stock = Int32.Parse(textBox4.Text);
-                    Producto producto = new Producto(textBox1.Text, textBox2.Text, precio, stock);
-                    local.agregarProducto(producto);
-                    MessageBox.Show("Producto agregado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                }
-            }
             if(i == 0)
             {
                 MessageBox.Show("No se ha podido agregar el produco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

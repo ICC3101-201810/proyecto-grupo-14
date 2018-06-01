@@ -34,7 +34,7 @@ namespace Proyecto
             int i = 0;
             foreach (Local la in Listas.locales)
             {
-                if (la.Nombre == textBox1.Text)
+                if (la.Nombre1 == textBox1.Text)
                 {
                     i++;
                     textBox2.Enabled = true;
@@ -93,9 +93,9 @@ namespace Proyecto
             {
                 foreach (Local local in Listas.locales)
                 {
-                    if (local.Nombre == textBox1.Text)
+                    if (local.Nombre1 == textBox1.Text)
                     {
-                        local.Nombre = textBox2.Text;
+                        local.Nombre1 = textBox2.Text;
                         local.Direccion = textBox3.Text;
                         local.RutAdmin = textBox4.Text;
                         local.Despacho = checkBox1.Checked;

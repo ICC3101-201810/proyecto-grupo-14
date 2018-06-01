@@ -51,7 +51,7 @@ namespace Proyecto.Forms
             {
                 Current.Dinero -= CurrentO.VerMonto();
                 CurrentL.agregarOdernCompra(CurrentO);
-                CurrentL.TotalEfectivo += CurrentO.VerMonto();
+                CurrentL.Totalefectivo += CurrentO.VerMonto();
                 MessageBox.Show("tienes el efectivo suficiente, recuerda no gastarlo antes de llegar a la tienda");
                 this.Close();
                 Form1 menu = new Form1();

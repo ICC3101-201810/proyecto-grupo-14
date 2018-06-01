@@ -54,7 +54,7 @@ namespace Proyecto
             foreach (Local local in Listas.locales)
             {
                 ListViewItem item = new ListViewItem();
-                item = listView1.Items.Add(local.Nombre);
+                item = listView1.Items.Add(local.Nombre1);
                 item.SubItems.Add(local.Direccion);
                 item.SubItems.Add(local.Despacho.ToString());
                 item.SubItems.Add(local.Credito.ToString());

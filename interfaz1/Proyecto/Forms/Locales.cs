@@ -27,7 +27,7 @@ namespace Proyecto
             foreach (Local local in Listas.locales)
             {
                 ListViewItem item = new ListViewItem();
-                item = listView1.Items.Add(local.Nombre);
+                item = listView1.Items.Add(local.Nombre1);
                 item.SubItems.Add(local.Direccion);
                 item.SubItems.Add(local.Despacho.ToString());
                 item.SubItems.Add(local.Credito.ToString());
@@ -44,7 +44,7 @@ namespace Proyecto
             string text = listView1.SelectedItems[0].Text;
             foreach(Local l in Listas.locales)
             {
-                if (text == l.Nombre)
+                if (text == l.Nombre1)
                 {
                     lt = l;
                 }

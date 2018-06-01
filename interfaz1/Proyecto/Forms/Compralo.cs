@@ -70,7 +70,7 @@ namespace Proyecto
             seleccion.Marca = marca;
             seleccion.Nombre = nombre;
             seleccion.Stock = cantidad;
-            O.productos.Add(seleccion);
+            O.Productos.Add(seleccion);
         }
 
         private void button6_Click(object sender, EventArgs e)

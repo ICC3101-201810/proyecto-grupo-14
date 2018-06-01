@@ -28,7 +28,6 @@ namespace Proyecto
         private void cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            Parent.Show();
         }
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +56,19 @@ namespace Proyecto
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            ParentWindow.Show();
+            base.OnClosed(e);
+        }
+
+        private void verSaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            label1.Visible = true;
+            string dinero =;
+            label2.Text = current.Dinero;
+            label2.Visible = true;
         }
     }
 }

@@ -78,7 +78,7 @@ namespace Proyecto
 
                 if (textBox3.Text == "Monseñor...")
                 {
-                    Local local = new Local(textBox1.Text, textBox3.Text, textBox2.Text, despacho, efectivo, debito, credito, cheque,"dentro de la universidad");
+                    Local local = new Local(0,0,0,textBox1.Text, textBox3.Text, textBox2.Text, despacho, efectivo, debito, credito, cheque,"dentro de la universidad");
                     Listas.locales.Add(local);
                     MessageBox.Show("Local Agregado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
@@ -86,7 +86,7 @@ namespace Proyecto
                 }
                 else
                 {
-                    Local local = new Local(textBox1.Text, textBox3.Text, textBox2.Text, despacho, efectivo, debito, credito, cheque, "fuera de la universidad");
+                    Local local = new Local(0,0,0,textBox1.Text, textBox3.Text, textBox2.Text, despacho, efectivo, debito, credito, cheque, "fuera de la universidad");
                     Listas.locales.Add(local);
                     MessageBox.Show("Local Agregado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Hide();

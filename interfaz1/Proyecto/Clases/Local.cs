@@ -9,7 +9,7 @@ namespace Proyecto
     [Serializable()]
     public class Local
     {
-        List<Producto> productos { get; set; }
+        List<Producto> productos = new List<Producto>();
         List<OrdenCompra> ordenCompras = new List<OrdenCompra>();
         private string nombre;
         private string direccion;
@@ -20,6 +20,9 @@ namespace Proyecto
         private bool cheque;
         private string rutAdmin;
         private string ubicacion;
+        private float totaldebito;
+        private float totalcredito;
+        private float totalefectivo;
 
         public string Nombre1 { get => nombre; set => nombre = value; }
         public string Direccion { get => direccion; set => direccion = value; }
@@ -30,9 +33,16 @@ namespace Proyecto
         public bool Cheque { get => cheque; set => cheque = value; }
         public string RutAdmin { get => rutAdmin; set => rutAdmin = value; }
         public string Ubicacion { get => ubicacion; set => ubicacion = value; }
+        public float Totaldebito { get => Totaldebito1; set => Totaldebito1 = value; }
+        public float Totaldebito1 { get => totaldebito; set => totaldebito = value; }
+        public float Totalcredito { get => totalcredito; set => totalcredito = value; }
+        public float Totalefectivo { get => totalefectivo; set => totalefectivo = value; }
 
-        public Local(string Nombre, string Direccion, string RutAdmin, bool Despacho, bool Efectivo, bool Debito, bool Credito, bool Cheque,string Ubicacion)
+        public Local(float t,float u, float v, string Nombre, string Direccion, string RutAdmin, bool Despacho, bool Efectivo, bool Debito, bool Credito, bool Cheque,string Ubicacion)
         {
+            totalcredito = t;
+            totaldebito = u;
+            totalefectivo = v;
             nombre = Nombre;
             direccion = Direccion;
             rutAdmin = RutAdmin;

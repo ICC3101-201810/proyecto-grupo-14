@@ -48,7 +48,7 @@ namespace Proyecto.Forms
                     Cliente1 cl = new Cliente1(current, currentU, mn);
                     MessageBox.Show("Pago exitoso, retire los productos de la manera acordada preciamente");
                     CurrentL.agregarOdernCompra(CurrentK);
-                    CurrentL.totaldebito += CurrentK.VerMonto();
+                    CurrentL.Totaldebito += CurrentK.VerMonto();
                     CurrentL.VenderProductos(CurrentK);
                     cl.Show();
                 }

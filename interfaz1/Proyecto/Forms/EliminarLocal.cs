@@ -23,7 +23,7 @@ namespace Proyecto
         {
             string b = "";
             bool a=false;
-            Local la = new Local(textBox1.Text, textBox1.Text,textBox1.Text,a,a,a,a,a,b);
+            Local la = new Local(0,0,0,textBox1.Text, textBox1.Text,textBox1.Text,a,a,a,a,a,b);
             
 
             if(la.Eliminar(la, textBox1.Text) == false)
