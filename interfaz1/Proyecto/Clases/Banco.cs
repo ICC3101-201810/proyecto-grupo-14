@@ -49,9 +49,9 @@ namespace Proyecto
             }
             return false;
         }
-        public bool PagoConDebito(string NroDeTarjetaDebito1, string contraseña1, float monto, string rut1)
+        public bool PagoConDebito(string NroDeTarjetaDebito1, string contraseña1, float monto)
         {
-            if (NroDeTarjetaDebito1 == NroTarjetaDebito1 && contraseña1== ContrasenaDebito && rut1 ==Rut )
+            if (NroDeTarjetaDebito1 == NroTarjetaDebito1 && contraseña1== ContrasenaDebito )
             {
                 if (Debito1 >= monto)
                 {
@@ -62,9 +62,9 @@ namespace Proyecto
             }
             return false;
         }
-        public bool PagoConCredito(string NroDeTarjetaCredito1, string contraseña1, float monto, string rut1)
+        public bool PagoConCredito(string NroDeTarjetaCredito1, string contraseña1, float monto)
         {
-            if (NroDeTarjetaCredito1 == NroTarjetaCredito1 && contraseña1 == ContrasenaCredito && rut1==Rut)
+            if (NroDeTarjetaCredito1 == NroTarjetaCredito1 && contraseña1 == ContrasenaCredito)
             {
                 if (Credito1 >= monto)
                 {

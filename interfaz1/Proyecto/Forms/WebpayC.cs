@@ -49,7 +49,7 @@ namespace Proyecto.Forms
             {
                 if (current.Credito1 >= CurrentK.VerMonto())
                 {
-                    current.PagoConCredito(a, b, CurrentK.VerMonto(), currentU.Rut);
+                    current.PagoConCredito(a, b, CurrentK.VerMonto());
                     this.Close();
                     Form1 mn = new Form1();
                     Cliente1 cl = new Cliente1(current,currentU, mn);
