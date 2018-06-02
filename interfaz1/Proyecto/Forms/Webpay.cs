@@ -45,6 +45,17 @@ namespace Proyecto.Forms
                     {
                         if (br.Debito1 >= CurrentK.VerMonto())
                         {
+                            List<Producto> productos = CurrentL.GetProductos();
+                            foreach (Producto producto in productos)
+                            {
+                                foreach (Producto producto1 in CurrentK.Productos)
+                                {
+                                    if (producto.Nombre == producto1.Nombre && producto.Marca == producto1.Marca)
+                                    {
+                                        producto.Stock -= 1;
+                                    }
+                                }
+                            }
                             br.PagoConDebito(a, b, CurrentK.VerMonto());
                             this.Close();
                             Form1 mn = new Form1();
@@ -57,7 +68,7 @@ namespace Proyecto.Forms
                         }
                         else
                         {
-                            MessageBox.Show("no hay saldo suficiente en tu linea de debito, intenta con otro medio de pago o saca algun producto de la lista");
+                            MessageBox.Show("No hay saldo suficiente en tu linea de debito, intenta con otro medio de pago o saca algun producto de la lista");
                             this.Close();
                             parentWindow.Show();
                         }

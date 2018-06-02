@@ -23,6 +23,8 @@ namespace Proyecto.Forms
             this.ParentWindow = parentWindow;
             this.CurrentO = a;
             InitializeComponent();
+            this.CenterToScreen();
+            this.Text = "Metodo de Pago";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,13 +49,24 @@ namespace Proyecto.Forms
             }
             else
             {
+                List<Producto> productos = CurrentL.GetProductos();
+                foreach (Producto producto in productos)
+                {
+                    foreach (Producto producto1 in CurrentO.Productos)
+                    {
+                        if (producto.Nombre == producto1.Nombre && producto.Marca == producto1.Marca)
+                        {
+                            producto.Stock -= 1;
+                        }
+                    }
+                }
                 Current.Dinero -= CurrentO.VerMonto();
                 CurrentL.agregarOdernCompra(CurrentO);
                 CurrentL.Totalefectivo += CurrentO.VerMonto();
-                MessageBox.Show("Compra realiza con exito");
+                MessageBox.Show("Compra realizada con exito");
                 this.Close();
                 Form1 menu = new Form1();
-                Cliente1 cl = new Cliente1( Current, menu);
+                Cliente1 cl = new Cliente1(Current, menu);
                 cl.Show();
             }
         }

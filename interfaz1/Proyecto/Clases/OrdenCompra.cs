@@ -40,24 +40,12 @@ namespace Proyecto
             }
             return true;
         }
-        public void verInfo()
-        {
-            int suma = 0;
-            Console.WriteLine("El cliente: " + Cliente.Nombre + " compro: ");
-            foreach (Producto producto in Productos)
-            {
-                Console.WriteLine("Producto: " + producto.Nombre + ", marca " + producto.Marca + " ............ $" + producto.Precio);
-                suma = suma + producto.Precio;
-            }
-            Console.WriteLine("Por un total de " + suma);
-            Console.WriteLine("En el horario: " + DateTime.Now);
-        }
         public float VerMonto()
             {
             float suma = 0;
             foreach (Producto producto in Productos)
             {
-                suma = suma + producto.Precio;
+                suma += producto.Precio;
             }
             return suma;
         }

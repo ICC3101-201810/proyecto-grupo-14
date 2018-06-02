@@ -19,7 +19,8 @@ namespace Proyecto
             this.CurrentC = c;
             this.ParentWindow = cl;
             InitializeComponent();
-
+            this.CenterToScreen();
+            this.Text = "Locales";
             listView1.Visible = true;
             listView1.Items.Clear();
             ListViewItem item = new ListViewItem();
@@ -40,13 +41,29 @@ namespace Proyecto
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listView1.FullRowSelect = true;
-            string text = listView1.SelectedItems[0].Text;
+            string text;
+            try
+            {
+                text = listView1.SelectedItems[0].Text;
+            }
+            catch (Exception)
+            {
+                text = "";
+                throw;
+            }
+            int i = 0;
             foreach(Local l in Listas.locales)
             {
                 if (text == l.Nombre1)
                 {
                     lt = l;
+                    i++;
+                    break;
                 }
+            }
+            if (i==0)
+            {
+                MessageBox.Show("Seleccione un local", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

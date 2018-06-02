@@ -17,6 +17,7 @@ namespace Proyecto
         Usuario currentU;
         LocalesU parentWindow;
         List<Producto> sq = new List<Producto>();
+        List<Producto> sq1 = new List<Producto>();
         public Compralo(Local l, Cliente a, LocalesU parentWindow)
         {
             this.currentL = l;
@@ -26,8 +27,16 @@ namespace Proyecto
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Compralo";
-
-
+            ListViewItem item = new ListViewItem();
+            listView1.Items.Clear();
+            foreach (Producto local in currentL.GetProductos())
+            {
+                item = listView1.Items.Add(local.Nombre);
+                item.SubItems.Add(local.Marca);
+                item.SubItems.Add(local.Precio.ToString());
+                item.SubItems.Add(local.Stock.ToString());
+            }
+            listView2.Items.Clear();
 
         }
 
@@ -37,15 +46,7 @@ namespace Proyecto
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ListViewItem item = new ListViewItem();
-            listView1.Items.Clear();
-            foreach (Producto local in currentL.GetProductos())
-            {
-                    item = listView1.Items.Add(local.Nombre);
-                    item.SubItems.Add(local.Marca);
-                    item.SubItems.Add(local.Precio.ToString());
-                    item.SubItems.Add(local.Stock.ToString());
-            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -75,16 +76,21 @@ namespace Proyecto
             {
                 if (nombre == p.Nombre && p.Marca == marca && p.Stock != 0 && p.Stock >= cantidad)
                 {
+                    int i = 0;
+                    while (i<=cantidad)
+                    {
+                        sq.Add(p);
+                        i+=1;
+                    }
                     cq++;
-                    sq.Add(p);
+                    sq1.Add(p);
                     break;
-
                 }
 
             }
             if (cq == 0) { MessageBox.Show("No se encuentra el producto"); }
 
-            foreach (Producto p in sq)
+            foreach (Producto p in sq1)
             {
                 item = listView2.Items.Add(p.Nombre);
                 item.SubItems.Add(p.Marca);

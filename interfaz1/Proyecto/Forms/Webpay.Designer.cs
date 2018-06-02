@@ -51,23 +51,23 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 13);
+            this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "ingrese la contrase;a";
+            this.label2.Text = "Ingrese la contraseña";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 140);
+            this.button1.Location = new System.Drawing.Point(136, 144);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "siguiente";
+            this.button1.Text = "Siguiente";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(136, 140);
+            this.button2.Location = new System.Drawing.Point(12, 144);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -86,6 +86,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(13, 106);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 7;
             // 
