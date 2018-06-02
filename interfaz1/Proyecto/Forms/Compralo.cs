@@ -39,15 +39,14 @@ namespace Proyecto
 
         private void button3_Click(object sender, EventArgs e)
         {
+            ListViewItem item = new ListViewItem();
+            listView1.Items.Clear();
             foreach (Producto local in currentL.GetProductos())
             {
-                    ListViewItem item = new ListViewItem();
                     item = listView1.Items.Add(local.Nombre);
                     item.SubItems.Add(local.Marca);
                     item.SubItems.Add(local.Precio.ToString());
                     item.SubItems.Add(local.Stock.ToString());
-                
-
             }
         }
 
@@ -65,11 +64,11 @@ namespace Proyecto
         string nombre;
         string marca;
         int cantidad;
-        
-        
+        ListViewItem item = new ListViewItem();
+
         private void button4_Click(object sender, EventArgs e)
         {
-
+            listView2.Items.Clear();
             marca = textBox2.Text;
             nombre = textBox1.Text;
             cantidad = Int32.Parse(textBox3.Text);
@@ -87,19 +86,16 @@ namespace Proyecto
             }
             if (cq == 0) { MessageBox.Show("No se encuentra el producto"); }
 
-
-            ListViewItem item = new ListViewItem();
             foreach (Producto p in sq)
             {
-                
                 item = listView2.Items.Add(p.Nombre);
                 item.SubItems.Add(p.Marca);
                 item.SubItems.Add(p.Precio.ToString());
                 item.SubItems.Add(cantidad.ToString());
-
-
-
             }
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
         }
 
         private void button6_Click(object sender, EventArgs e)

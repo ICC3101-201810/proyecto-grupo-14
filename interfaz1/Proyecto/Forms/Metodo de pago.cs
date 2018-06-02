@@ -63,7 +63,7 @@ namespace Proyecto.Forms
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            Parent.Show();
+            ParentWindow.Show();
         }
 
         private void Metodo_de_pago_Load(object sender, EventArgs e)
