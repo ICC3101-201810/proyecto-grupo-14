@@ -135,6 +135,7 @@ namespace Proyecto
                     string efectivo1 = textBox4.Text;
                     int efectivo = Int32.Parse(efectivo1);
                     Cliente cliente = new Cliente(rut, nombre, contraseña, efectivo);
+                    Banco nvo = new Banco(contraseña, 0, 10000000000000, contraseña, 0, 10000000000000, rut, rut,rut,rut,nombre,contraseña,efectivo);
                     Listas.clientes.Add(cliente);
 
 

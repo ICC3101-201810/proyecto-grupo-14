@@ -42,7 +42,7 @@ namespace Proyecto.Forms
             {
                 if (current.Debito1 >= CurrentK.VerMonto())
                 {
-                    current.PagoConDebito(a, b, CurrentK.VerMonto(), current.Rut);
+                    current.PagoConDebito(a, b, CurrentK.VerMonto());
                     this.Close();
                     Form1 mn = new Form1();
                     Cliente1 cl = new Cliente1(current, currentU, mn);
