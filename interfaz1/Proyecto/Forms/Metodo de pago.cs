@@ -45,14 +45,14 @@ namespace Proyecto.Forms
         {
             if (Current.Dinero <= CurrentO.VerMonto())
             {
-                MessageBox.Show("no posees el efectivo suficiente, selecciona otra opcion de pago o elimina algo de la cuenta volviendo atras");
+                MessageBox.Show("No posees el efectivo suficiente, selecciona otra opcion de pago o elimina algo de la cuenta volviendo atras");
             }
             else
             {
                 Current.Dinero -= CurrentO.VerMonto();
                 CurrentL.agregarOdernCompra(CurrentO);
                 CurrentL.Totalefectivo += CurrentO.VerMonto();
-                MessageBox.Show("tienes el efectivo suficiente, recuerda no gastarlo antes de llegar a la tienda");
+                MessageBox.Show("Compra realiza con exito");
                 this.Close();
                 Form1 menu = new Form1();
                 Cliente1 cl = new Cliente1(CurrentC, Current, menu);
