@@ -15,14 +15,12 @@ namespace Proyecto
         Local currentL;
         Cliente current;
         Usuario currentU;
-        Banco currentb;
         LocalesU parentWindow;
         List<Producto> sq = new List<Producto>();
-        public Compralo(Local l, Cliente a, Banco c, LocalesU parentWindow)
+        public Compralo(Local l, Cliente a, LocalesU parentWindow)
         {
             this.currentL = l;
             this.parentWindow = parentWindow;
-            this.currentb = c;
             this.current = a;
             this.currentU = (Usuario)current;
             InitializeComponent();
@@ -102,7 +100,7 @@ namespace Proyecto
         {
             OrdenCompra O = new OrdenCompra(1, current, sq, currentL);
             this.Hide();
-            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(currentL, current,currentb,O,this);
+            Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(currentL, current,O,this);
             mt.Show();
         }
 

@@ -13,12 +13,10 @@ namespace Proyecto
     public partial class LocalesU : Form
     {
         Cliente CurrentC;
-        Banco CurrentB;
         Cliente1 ParentWindow;
-        public LocalesU(Cliente c, Banco b, Cliente1 cl)
+        public LocalesU(Cliente c, Cliente1 cl)
         {
             this.CurrentC = c;
-            this.CurrentB = b;
             this.ParentWindow = cl;
             InitializeComponent();
 
@@ -66,7 +64,7 @@ namespace Proyecto
             else
             {
                 this.Hide();
-                Compralo cm = new Compralo(lt, CurrentC, CurrentB, this);
+                Compralo cm = new Compralo(lt, CurrentC, this);
                 cm.Show();
             }
         }

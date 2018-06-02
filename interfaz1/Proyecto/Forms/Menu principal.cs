@@ -70,7 +70,7 @@ namespace Proyecto
                             CuentaCliente = r;
                         }
                     }
-                    Cliente1 cliente = new Cliente1(CuentaCliente,c,this);
+                    Cliente1 cliente = new Cliente1(c,this);
                     cliente.Show();
                     break;
 

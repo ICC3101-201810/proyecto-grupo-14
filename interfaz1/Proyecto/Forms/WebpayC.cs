@@ -13,17 +13,15 @@ namespace Proyecto.Forms
     public partial class WebpayC : Form
     {
 
-        Banco current;
         Cliente currentU;
         Metodo_de_pago parentWindow;
         OrdenCompra CurrentK;
         Local CurrentL;
-        public WebpayC(OrdenCompra k, Banco a, Cliente rt, Local p, Metodo_de_pago parentWindow)
+        public WebpayC(OrdenCompra k, Cliente rt, Local p, Metodo_de_pago parentWindow)
         {
             this.CurrentL = p;
             this.CurrentK = k;
             this.parentWindow = parentWindow;
-            this.current = a;
             this.currentU = rt;
             InitializeComponent();
             this.CenterToScreen();
@@ -45,28 +43,41 @@ namespace Proyecto.Forms
         {
             string a = textBox1.Text;
             string b = textBox2.Text;
-            if (b == current.Contraseña)
+            foreach (Banco br in Listas.Cuentas)
             {
-                if (current.Credito1 >= CurrentK.VerMonto())
+                if (br.NroTarjetaCredito1 == a)
                 {
-                    current.PagoConCredito(a, b, CurrentK.VerMonto());
-                    this.Close();
-                    Form1 mn = new Form1();
-                    Cliente1 cl = new Cliente1(current,currentU, mn);
-                    MessageBox.Show("Pago exitoso, retire los productos de la manera acordada preciamente");
-                    CurrentL.agregarOdernCompra(CurrentK);
-                    CurrentL.VenderProductos(CurrentK);
-                    cl.Show();
-                    cl.Show();
+                    if (b == br.ContrasenaCredito)
+                    {
+                        if (br.Credito1 >= CurrentK.VerMonto())
+                        {
+                            br.PagoConCredito(a, b, CurrentK.VerMonto());
+                            this.Close();
+                            Form1 mn = new Form1();
+                            Cliente1 cl = new Cliente1(currentU, mn);
+                            MessageBox.Show("Pago exitoso, retire los productos de la manera acordada previamente");
+                            CurrentL.agregarOdernCompra(CurrentK);
+                            CurrentL.Totaldebito += CurrentK.VerMonto();
+                            CurrentL.VenderProductos(CurrentK);
+                            cl.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("no hay saldo suficiente en tu linea de debito, intenta con otro medio de pago o saca algun producto de la lista");
+                            this.Close();
+                            parentWindow.Show();
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("no hay saldo suficiente en tu linea de credito, intenta con otro medio de pago o saca algun producto de la lista");
+                    MessageBox.Show("no existe, trata con otra tarjeta");
                     this.Close();
-                    Parent.Show();
+                    parentWindow.Show();
                 }
+
             }
-                
+
         }
     }
 }
