@@ -59,10 +59,16 @@ namespace Proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Compralo cm = new Compralo(lt,CurrentC, CurrentB, this);
-            cm.Show();
-            
+            if (listView1.FullRowSelect == false)
+            {
+                MessageBox.Show("Seleccione un local", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                this.Hide();
+                Compralo cm = new Compralo(lt, CurrentC, CurrentB, this);
+                cm.Show();
+            }
         }
 
         private void LocalesU_Load(object sender, EventArgs e)
