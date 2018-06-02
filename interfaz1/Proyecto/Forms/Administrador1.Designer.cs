@@ -42,6 +42,10 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.eliminarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +80,8 @@
             // 
             this.localToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verLocalToolStripMenuItem,
-            this.editarLocalToolStripMenuItem});
+            this.editarLocalToolStripMenuItem,
+            this.eliminarProductoToolStripMenuItem});
             this.localToolStripMenuItem.Name = "localToolStripMenuItem";
             this.localToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.localToolStripMenuItem.Text = "Local";
@@ -84,15 +89,15 @@
             // verLocalToolStripMenuItem
             // 
             this.verLocalToolStripMenuItem.Name = "verLocalToolStripMenuItem";
-            this.verLocalToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.verLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verLocalToolStripMenuItem.Text = "Ver Local";
             this.verLocalToolStripMenuItem.Click += new System.EventHandler(this.verLocalToolStripMenuItem_Click);
             // 
             // editarLocalToolStripMenuItem
             // 
             this.editarLocalToolStripMenuItem.Name = "editarLocalToolStripMenuItem";
-            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editarLocalToolStripMenuItem.Text = "Editar Local";
+            this.editarLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarLocalToolStripMenuItem.Text = "Editar Producto";
             this.editarLocalToolStripMenuItem.Click += new System.EventHandler(this.editarLocalToolStripMenuItem_Click);
             // 
             // cuentaToolStripMenuItem
@@ -152,11 +157,50 @@
             // 
             this.columnHeader4.Text = "Stock";
             // 
+            // eliminarProductoToolStripMenuItem
+            // 
+            this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
+            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarProductoToolStripMenuItem.Text = "Eliminar Producto";
+            this.eliminarProductoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProductoToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Nombre Producto a Eliminar:";
+            this.label1.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(184, 94);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(114, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(305, 93);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Administrador1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 179);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.cerrar);
             this.Controls.Add(this.menuStrip1);
@@ -186,5 +230,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ToolStripMenuItem eliminarProductoToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -33,6 +33,9 @@ namespace Proyecto
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
             Contraseña contraseña = new Contraseña();
             contraseña.Show();
             listView1.Visible = false;
@@ -40,6 +43,9 @@ namespace Proyecto
 
         private void agregarStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
             AgregarProducto ag = new AgregarProducto(current);
             ag.Show();
             listView1.Visible = false;
@@ -47,6 +53,9 @@ namespace Proyecto
 
         private void verLocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
             foreach (Local local in Listas.locales)
             {
                 if (local.RutAdmin == current.Rut)
@@ -90,6 +99,9 @@ namespace Proyecto
 
         private void editarLocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
             editarProducto ep = new editarProducto(current);
             ep.Show();
             listView1.Visible = false;
@@ -113,6 +125,37 @@ namespace Proyecto
         private void Administrador1_Load_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = false;
+            label1.Visible = true;
+            textBox1.Visible = true;
+            button1.Visible = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            listView1.Visible = false;
+            foreach (Local local in Listas.locales)
+            {
+                if (local.RutAdmin == current.Rut)
+                {
+                    List<Producto> productos = local.GetProductos();
+                    if (local.EliminarProducto(productos, textBox1.Text) == true)
+                    {
+                        MessageBox.Show("Producto eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha encontrado el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            label1.Visible = false;
+            textBox1.Visible = false;
+            button1.Visible = false;
         }
     }
 }

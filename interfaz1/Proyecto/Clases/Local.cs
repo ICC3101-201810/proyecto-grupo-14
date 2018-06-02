@@ -126,7 +126,18 @@ namespace Proyecto
             return this.productos;
         }
 
-
+        public bool EliminarProducto(List<Producto> productos, string text)
+        {
+            foreach (Producto producto in productos)
+            {
+                if (producto.Nombre == text)
+                {
+                    productos.Remove(producto);
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public bool Eliminar(Local loc, string a)
         {
