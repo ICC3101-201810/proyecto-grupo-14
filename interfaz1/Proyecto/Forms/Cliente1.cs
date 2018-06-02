@@ -12,13 +12,11 @@ namespace Proyecto
 {
     public partial class Cliente1 : Form
     {
-        Banco CuentaUsuario;
         Form1 ParentWindow;
         Cliente current;
-        public Cliente1(Banco d , Cliente c, Form1 parentWindow)
+        public Cliente1( Cliente c, Form1 parentWindow)
         {
             this.current = c;
-            this.CuentaUsuario = d;
             this.ParentWindow = parentWindow;
             InitializeComponent();
             this.CenterToScreen();
@@ -49,7 +47,7 @@ namespace Proyecto
         private void localesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LocalesU cm = new LocalesU(current,CuentaUsuario,this);
+            LocalesU cm = new LocalesU(current,this);
             cm.Show();
         }
 

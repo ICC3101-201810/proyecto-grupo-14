@@ -12,17 +12,15 @@ namespace Proyecto.Forms
 {
     public partial class Webpay : Form
     {
-        Banco current;
         Cliente currentU;
         Metodo_de_pago parentWindow;
         OrdenCompra CurrentK;
         Local CurrentL;
-        public Webpay(OrdenCompra k, Banco a, Cliente rt,Local p, Metodo_de_pago parentWindow)
+        public Webpay(OrdenCompra k, Cliente rt, Local p, Metodo_de_pago parentWindow)
         {
             this.CurrentL = p;
             this.CurrentK = k;
             this.parentWindow = parentWindow;
-            this.current = a;
             this.currentU = rt;
             InitializeComponent();
             this.CenterToScreen();
@@ -34,30 +32,44 @@ namespace Proyecto.Forms
 
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             string a = textBox1.Text;
             string b = textBox2.Text;
-            if (b == current.Contraseña)
+            foreach (Banco br in Listas.Cuentas)
             {
-                if (current.Debito1 >= CurrentK.VerMonto())
+                if (br.NroTarjetaDebito1 == a)
                 {
-                    current.PagoConDebito(a, b, CurrentK.VerMonto());
-                    this.Close();
-                    Form1 mn = new Form1();
-                    Cliente1 cl = new Cliente1(current, currentU, mn);
-                    MessageBox.Show("Pago exitoso, retire los productos de la manera acordada preciamente");
-                    CurrentL.agregarOdernCompra(CurrentK);
-                    CurrentL.Totaldebito += CurrentK.VerMonto();
-                    CurrentL.VenderProductos(CurrentK);
-                    cl.Show();
+                    if (b == br.ContrasenaDebito)
+                    {
+                        if (br.Debito1 >= CurrentK.VerMonto())
+                        {
+                            br.PagoConDebito(a, b, CurrentK.VerMonto());
+                            this.Close();
+                            Form1 mn = new Form1();
+                            Cliente1 cl = new Cliente1(currentU, mn);
+                            MessageBox.Show("Pago exitoso, retire los productos de la manera acordada previamente");
+                            CurrentL.agregarOdernCompra(CurrentK);
+                            CurrentL.Totaldebito += CurrentK.VerMonto();
+                            CurrentL.VenderProductos(CurrentK);
+                            cl.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("no hay saldo suficiente en tu linea de debito, intenta con otro medio de pago o saca algun producto de la lista");
+                            this.Close();
+                            parentWindow.Show();
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("no hay saldo suficiente en tu linea de debito, intenta con otro medio de pago o saca algun producto de la lista");
+                    MessageBox.Show("no existe, trata con otra tarjeta");
                     this.Close();
-                    Parent.Show();
+                    parentWindow.Show();
                 }
+
             }
         }
 
@@ -70,7 +82,7 @@ namespace Proyecto.Forms
         {
 
             this.Close();
-            Parent.Show();
+            parentWindow.Show();
         }
 
         private void Webpay_Load(object sender, EventArgs e)

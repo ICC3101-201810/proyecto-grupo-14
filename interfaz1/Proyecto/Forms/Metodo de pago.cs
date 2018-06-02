@@ -15,29 +15,27 @@ namespace Proyecto.Forms
         Compralo ParentWindow;
         OrdenCompra CurrentO;
         Cliente Current;
-        Banco CurrentC;
         Local CurrentL;
-        public Metodo_de_pago(Local l,Cliente c, Banco d, OrdenCompra a, Compralo parentWindow)
+        public Metodo_de_pago(Local l,Cliente c,  OrdenCompra a, Compralo parentWindow)
         {
             this.CurrentL = l;
             this.Current = c;
             this.ParentWindow = parentWindow;
             this.CurrentO = a;
-            this.CurrentC = d;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Webpay menu = new Webpay(CurrentO,CurrentC, Current,CurrentL, this);
+            Webpay menu = new Webpay(CurrentO, Current,CurrentL, this);
             menu.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            WebpayC menu = new WebpayC(CurrentO, CurrentC, Current, CurrentL, this);
+            WebpayC menu = new WebpayC(CurrentO,  Current, CurrentL, this);
             menu.Show();
         }
 
@@ -55,7 +53,7 @@ namespace Proyecto.Forms
                 MessageBox.Show("tienes el efectivo suficiente, recuerda no gastarlo antes de llegar a la tienda");
                 this.Close();
                 Form1 menu = new Form1();
-                Cliente1 cl = new Cliente1(CurrentC, Current, menu);
+                Cliente1 cl = new Cliente1( Current, menu);
                 cl.Show();
             }
         }
