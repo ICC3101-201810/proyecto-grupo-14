@@ -24,9 +24,10 @@ namespace Proyecto
 
             listView1.Visible = true;
             listView1.Items.Clear();
+            ListViewItem item = new ListViewItem();
             foreach (Local local in Listas.locales)
             {
-                ListViewItem item = new ListViewItem();
+                
                 item = listView1.Items.Add(local.Nombre1);
                 item.SubItems.Add(local.Direccion);
                 item.SubItems.Add(local.Despacho.ToString());
@@ -72,7 +73,7 @@ namespace Proyecto
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            Parent.Show();
+            ParentWindow.Show();
         }
     }
 }

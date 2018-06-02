@@ -17,6 +17,7 @@ namespace Proyecto
         Usuario currentU;
         Banco currentb;
         LocalesU parentWindow;
+        List<Producto> sq = new List<Producto>();
         public Compralo(Local l, Cliente a, Banco c, LocalesU parentWindow)
         {
             this.currentL = l;
@@ -27,6 +28,9 @@ namespace Proyecto
             InitializeComponent();
             this.CenterToScreen();
             this.Text = "Compralo";
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,27 +61,41 @@ namespace Proyecto
         {
             MessageBox.Show("Como no  pudimos agregar a la lista OrdenCompra no se puede desplegar");
         }
-        OrdenCompra O;
+
         string nombre;
         string marca;
         int cantidad;
-        Producto seleccion;
+        
+        
         private void button4_Click(object sender, EventArgs e)
         {
-            marca = maskedTextBox2.Text;
-            nombre = maskedTextBox1.Text;
-            cantidad = Int32.Parse(maskedTextBox3.Text);
-            seleccion.Marca = marca;
-            seleccion.Nombre = nombre;
-            seleccion.Stock = cantidad;
-            O.Productos.Add(seleccion);
 
-            foreach (Producto p in O.Productos)
+            marca = textBox2.Text;
+            nombre = textBox1.Text;
+            cantidad = Int32.Parse(textBox3.Text);
+            int cq = 0;
+            foreach (Producto p in currentL.GetProductos())
             {
-                ListViewItem item = new ListViewItem();
+                if (nombre == p.Nombre && p.Marca == marca && p.Stock != 0 && p.Stock >= cantidad)
+                {
+                    cq++;
+                    sq.Add(p);
+                    break;
+
+                }
+
+            }
+            if (cq == 0) { MessageBox.Show("No se encuentra el producto"); }
+
+
+            ListViewItem item = new ListViewItem();
+            foreach (Producto p in sq)
+            {
+                
                 item = listView2.Items.Add(p.Nombre);
                 item.SubItems.Add(p.Marca);
                 item.SubItems.Add(p.Precio.ToString());
+                item.SubItems.Add(cantidad.ToString());
 
 
 
@@ -86,6 +104,7 @@ namespace Proyecto
 
         private void button6_Click(object sender, EventArgs e)
         {
+            OrdenCompra O = new OrdenCompra(1, current, sq, currentL);
             this.Hide();
             Forms.Metodo_de_pago mt = new Forms.Metodo_de_pago(currentL, current,currentb,O,this);
             mt.Show();
